@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<head>
+  <link rel="stylesheet" type="text/css" href="3rdparty/markdown.css">
+</head>
+<body>
+<h1>Hallo!</h1>
+  <div id="placeholder">placeholder</div>
+  <div id="jserror"></div>
+    <script>
+    var jserror = document.getElementById('jserror');
+    jserror.innerHTML = 'jserror';
+    window.onerror=function(msg, url, linenumber){
+        jserror.innerHTML = ('Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber);
+        return true;
+    }
+    </script>
+    <script src="3rdparty/marked.min.js"></script>
+    <script>
+    var placeholder = document.getElementById('placeholder');
+
+    var updateText = function(text) {
+        placeholder.innerHTML = marked(text);
+    }
+
+    updateText("# placeholder");
+
+    console.log("HTML here!");
+    </script>
+</body>
+</html>
+
+
+
