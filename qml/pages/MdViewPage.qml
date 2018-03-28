@@ -25,24 +25,24 @@ Page {
         url: Qt.resolvedUrl("../marked/index.html")
 
         function updateText(text) {
-            var script = 'updateText(\'' + text + '\')';
+            var script = 'updateText(' + JSON.stringify(text) + ')';
             console.log(script);
             webView.experimental.evaluateJavaScript(script , function(){})
         }
 
 
         function loadFile() {
-//            var req =  new XMLHttpRequest();
-//            req.open('GET', page.filePath);
-//            req.onreadystatechange = function(event) {
-//                if (req.readyState === XMLHttpRequest.DONE) {
-//                    console.log(req.responseText)
-//                    webView.updateText('# ein Test und noch einer')
-//                    webView.updateText(req.responseText)
-//                }
-//            }
-//            req.send()
-            webView.experimental.evaluateJavaScript("loadFile(\"" + page.filePath + "\")" , function(){})
+            var req =  new XMLHttpRequest();
+            req.open('GET', page.filePath);
+            req.onreadystatechange = function(event) {
+                if (req.readyState === XMLHttpRequest.DONE) {
+                    console.log(req.responseText)
+                    webView.updateText('# ein Test und noch einer')
+                    webView.updateText(req.responseText);
+                }
+            }
+            req.send()
+//            webView.experimental.evaluateJavaScript("loadFile(\"" + page.filePath + "\")" , function(){})
         }
 
         Component.onCompleted: {
