@@ -16,13 +16,14 @@ CONFIG += sailfishapp_qml
 
 DISTFILES += qml/harbour-notizenmd.qml \
     qml/cover/CoverPage.qml \
-    qml/marked/* \
+    qml/html/* \
     rpm/harbour-notizenmd.changes.in \
     rpm/harbour-notizenmd.changes.run.in \
     rpm/harbour-notizenmd.spec \
     rpm/harbour-notizenmd.yaml \
     translations/*.ts \
     harbour-notizenmd.desktop \
+    qml/pages/DirectoryPage.qml \
     qml/pages/MdViewPage.qml \
     qml/pages/Settings.qml
 

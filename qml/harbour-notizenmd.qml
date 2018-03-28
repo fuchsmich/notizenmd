@@ -8,7 +8,7 @@ ApplicationWindow
 {
     id: app
     //initialPage: Component { FirstPage { } }
-    initialPage: Component{ MyFilePickerPage{} }
+    initialPage: Component{ NotesPage {} }
 
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
     allowedOrientations: defaultAllowedOrientations
@@ -16,7 +16,7 @@ ApplicationWindow
     ConfigurationGroup {
         id: settings
         path: "/apps/harbour-notizenmd/settings"
-        property string notesLocation: ""
+        property string notesLocation: "/home/nemo"
     }
 
 }
