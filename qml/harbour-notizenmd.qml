@@ -18,5 +18,4 @@ ApplicationWindow
         path: "/apps/harbour-notizenmd/settings"
         property string notesLocation: "/home/nemo"
     }
-
 }

@@ -8,16 +8,20 @@ Page {
     id: page
 
     allowedOrientations: Orientation.All
-    property string filePath: Qt.resolvedUrl("default.md")
+    property string filePath
 
     SilicaWebView {
         id: webView
         anchors.fill: parent
+        property string text: ""
 
         PullDownMenu {
             MenuItem {
-                text: qsTr("Settings")
-                onClicked: pageStack.push(Qt.resolvedUrl("Settings.qml"))
+                text: qsTr("Edit")
+                onClicked: pageStack.push(Qt.resolvedUrl("NoteEditPage.qml"), {
+                                              filePath: page.filePath,
+                                              text: webView.text
+                                          })
             }
         }
 
@@ -31,12 +35,17 @@ Page {
 
 
         function loadFile() {
+            if (!page.filePath) {
+                webView.updateText("No file selected");
+                return;
+            }
             var req =  new XMLHttpRequest();
             req.open('GET', page.filePath);
             req.onreadystatechange = function(event) {
                 if (req.readyState === XMLHttpRequest.DONE) {
                     //console.log(req.responseText)
                     //webView.updateText('# ein Test und noch einer')
+                    webView.text = req.responseText;
                     webView.updateText(req.responseText);
                 }
             }

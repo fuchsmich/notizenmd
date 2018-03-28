@@ -1,7 +1,5 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-//import Sailfish.FileManager 1.0
-//import "../components" as MC
 
 DirectoryPage {
     id: directoryPage

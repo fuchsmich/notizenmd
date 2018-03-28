@@ -60,7 +60,6 @@ Page {
 
             Component {
                 id: filePickerPage
-                //TODO how to create new file?
                 FilePickerPage {
                     title: "todo.txt Location"
                     nameFilters: [ '*.txt']
