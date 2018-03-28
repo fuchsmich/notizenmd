@@ -16,7 +16,7 @@
         return true;
     }
     </script>
-    <script src="3rdparty/marked.min.js"></script>
+    <script src="3rdparty/marked.js"></script>
     <script>
     var placeholder = document.getElementById('placeholder');
 
@@ -24,7 +24,21 @@
         placeholder.innerHTML = marked(text);
     }
 
-    updateText("# placeholder");
+    updateText("# placeholder \n newline?");
+
+    var loadFile = function(url) {
+        var req =  new XMLHttpRequest();
+        req.open('GET', url);
+        req.onreadystatechange = function(event) {
+            if (req.readyState === XMLHttpRequest.DONE) {
+                console.log(req.responseText)
+                updateText('# ein Test und noch einer')
+                updateText(req.responseText)
+            }
+        }
+        req.send()
+    }
+
 
     console.log("HTML here!");
     </script>
