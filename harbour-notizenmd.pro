@@ -16,7 +16,6 @@ CONFIG += sailfishapp_qml
 
 DISTFILES += qml/harbour-notizenmd.qml \
     qml/cover/CoverPage.qml \
-    qml/pages/SecondPage.qml \
     qml/marked/* \
     rpm/harbour-notizenmd.changes.in \
     rpm/harbour-notizenmd.changes.run.in \
@@ -24,7 +23,8 @@ DISTFILES += qml/harbour-notizenmd.qml \
     rpm/harbour-notizenmd.yaml \
     translations/*.ts \
     harbour-notizenmd.desktop \
-    qml/pages/MdViewPage.qml
+    qml/pages/MdViewPage.qml \
+    qml/pages/Settings.qml
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 

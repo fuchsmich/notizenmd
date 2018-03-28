@@ -16,17 +16,16 @@ Page {
 
         PullDownMenu {
             MenuItem {
-                text: qsTr("Show Page 2")
-                onClicked: webView.runJavaScript('updateText("# schwubidubi")',
-                                          function(){});
+                text: qsTr("Settings")
+                onClicked: pageStack.push(Qt.resolvedUrl("Settings.qml"))
             }
         }
 
-        url: Qt.resolvedUrl("../marked/index.html")
+        url: Qt.resolvedUrl("../html/index.html")
 
         function updateText(text) {
             var script = 'updateText(' + JSON.stringify(text) + ')';
-            console.log(script);
+            //console.log(script);
             webView.experimental.evaluateJavaScript(script , function(){})
         }
 
@@ -36,8 +35,8 @@ Page {
             req.open('GET', page.filePath);
             req.onreadystatechange = function(event) {
                 if (req.readyState === XMLHttpRequest.DONE) {
-                    console.log(req.responseText)
-                    webView.updateText('# ein Test und noch einer')
+                    //console.log(req.responseText)
+                    //webView.updateText('# ein Test und noch einer')
                     webView.updateText(req.responseText);
                 }
             }
