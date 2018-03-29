@@ -1,19 +1,18 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import QtWebKit.experimental 1.0
-//import QtWebChannel 1.0
-//import Sailfish.WebView 1.0
 
 Page {
     id: page
 
     allowedOrientations: Orientation.All
     property string filePath
+    property string text: ""
+    onTextChanged: webView.updateText(text)
 
     SilicaWebView {
         id: webView
         anchors.fill: parent
-        property string text: ""
 
         PullDownMenu {
             MenuItem {
@@ -43,34 +42,19 @@ Page {
             req.open('GET', page.filePath);
             req.onreadystatechange = function(event) {
                 if (req.readyState === XMLHttpRequest.DONE) {
-                    //console.log(req.responseText)
-                    //webView.updateText('# ein Test und noch einer')
-                    webView.text = req.responseText;
-                    webView.updateText(req.responseText);
+                    page.text = req.responseText;
                 }
             }
             req.send()
-//            webView.experimental.evaluateJavaScript("loadFile(\"" + page.filePath + "\")" , function(){})
         }
 
         Component.onCompleted: {
         }
         signal messageReceived(var message)
 
-//        Connections {
-//            target: app
-//            onWebViewRunJavaScript: webView.runJavaScript(script, callback)
-//        }
-
         function runJavaScript(script, callback) {
             return webView.experimental.evaluateJavaScript(script, callback);
         }
-
-//        property Item _webPage: webView.experimental.page
-//        experimental.preferredMinimumContentsWidth: _webPage.width
-//        experimental.deviceWidth: Screen.width
-//        experimental.deviceHeight: Screen.height
-//        experimental.enableInputFieldAnimation: false
 
         experimental.preferences.navigatorQtObjectEnabled: true
         experimental.onMessageReceived: webView.messageReceived(message)

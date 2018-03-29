@@ -3,7 +3,7 @@ import Sailfish.Silica 1.0
 import Sailfish.Silica.private 1.0 as Private
 import Nemo.FileManager 1.0
 import Sailfish.FileManager 1.0
-import org.nemomobile.notifications 1.0
+import Nemo.Notifications 1.0
 import org.nemomobile.contentaction 1.0
 
 Page {
