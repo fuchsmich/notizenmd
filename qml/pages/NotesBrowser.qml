@@ -214,7 +214,7 @@ Page {
                     })
                 } else {
                     var filePath = Qt.resolvedUrl(fileModel.path + "/" + model.fileName)
-                    pageStack.push(Qt.resolvedUrl("MdViewPage.qml"), {
+                    pageStack.push(Qt.resolvedUrl("MdViewPage_copy.qml"), {
                                     filePath: filePath
                                    })
                 }

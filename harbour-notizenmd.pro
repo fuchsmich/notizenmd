@@ -28,7 +28,8 @@ DISTFILES += qml/harbour-notizenmd.qml \
     qml/pages/NewNoteDialog.qml \
     qml/pages/NotesBrowser.qml \
     qml/pages/Settings.qml \
-    qml/pages/EditNotePage.qml
+    qml/pages/EditNotePage.qml \
+    qml/pages/MdViewPage_copy.qml
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 
