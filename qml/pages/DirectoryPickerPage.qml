@@ -23,8 +23,14 @@ Page {
     property alias directorySort: fileModel.directorySort
     property alias nameFilters: fileModel.nameFilters
 
-    signal formatClicked
-    signal folderChosen //wie verbinden (sh. FilePicker)
+    property Item callerPage
+
+    signal directoryPicked(string path) //wie verbinden (sh. FilePicker)
+    onDirectoryPicked: {
+        if (callerPage) {
+            pageStack.pop(callerPage);
+        }
+    }
 
     function refresh() {
         fileModel.refresh()
@@ -72,13 +78,6 @@ Page {
 
         PullDownMenu {
 
-//            MenuItem {
-//                //% "Format"
-//                text: qsTrId("filemanager-me-format")
-//                visible: showFormat
-//                onClicked: page.formatClicked()
-//            }
-
             MenuItem {
                 //% "Sort"
                 text: qsTrId("filemanager-me-sort")
@@ -101,19 +100,13 @@ Page {
                             }
                         }
                     )
+                    dialog.directoryPicked.connect(filePicker.directoryPicked)
                 }
                 function pop() {
                     pageStack.pop()
                     fileModel.sortByChanged.disconnect(pop)
                     fileModel.sortOrderChanged.disconnect(pop)
                 }
-            }
-
-            MenuItem {
-                //% "Paste"
-                text: qsTrId("filemanager-me-paste")
-                visible: FileEngine.clipboardCount > 0
-                onClicked: FileEngine.pasteFiles(page.path, true)
             }
 
             MenuItem {
@@ -127,13 +120,6 @@ Page {
                 visible: page.showNewFolder
                 onClicked: {
                     var dialog = pageStack.push(Qt.resolvedUrl("/usr/lib/qt5/qml/Sailfish/FileManager/NewFolderDialog.qml"), { path: page.path })
-                }
-            }
-
-            MenuItem {
-                text: qsTr("New Note")
-                onClicked: {
-                    //var dialog = pageStack.push(Qt.resolvedUrl("/usr/lib/qt5/qml/Sailfish/FileManager/NewFolderDialog.qml"), { path: page.path })
                 }
             }
         }
@@ -224,7 +210,7 @@ Page {
                     MenuItem {
                         //% "Copy"
                         text: qsTrId("Choose Folder")
-                        onClicked: folderChosen()
+                        onClicked: directoryPicked(model.absolutePath)
                     }
                 }
             }

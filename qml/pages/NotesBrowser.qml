@@ -138,8 +138,10 @@ Page {
         }
 
         header: PageHeader {
-            title: path == homePath && page.title.length > 0 ? page.title
-                                                             : page.path.split("/").pop()
+//            title: path == homePath && page.title.length > 0 ? page.title
+//                                                             : page.path.split("/").pop()
+            title: page.title
+            description: homePath
         }
 
         delegate: ListItem {
@@ -199,7 +201,7 @@ Page {
             ListView.onRemove: if (page.status === PageStatus.Active) animateRemoval(fileItem)
             onClicked: {
                 if (model.isDir) {
-                    pageStack.push(Qt.resolvedUrl("DirectoryPage.qml"), {
+                    pageStack.push(Qt.resolvedUrl("NotesBrowser.qml"), {
                         path: fileModel.appendPath(model.fileName),
                         homePath: page.homePath,
                         errorNotification: page.errorNotification,

@@ -8,7 +8,10 @@ ApplicationWindow
 {
     id: app
     //initialPage: Component { FirstPage { } }
-    initialPage: Component{ NotesPage {} }
+    initialPage: Component{ NotesBrowser {
+            homePath: settings.notesLocation
+            title: qsTr("Notes")
+        }  }
 
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
     allowedOrientations: defaultAllowedOrientations

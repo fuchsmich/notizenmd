@@ -60,12 +60,13 @@ Page {
 
             Component {
                 id: filePickerPage
-                FilePickerPage {
-                    title: "todo.txt Location"
-                    nameFilters: [ '*.txt']
-                    onSelectedContentPropertiesChanged: {
-                        settings.todoTxtLocation = selectedContentProperties.filePath
+                DirectoryPickerPage {
+                    title: "Location of Notes"
+                    homePath: StandardPaths.home
+                    onDirectoryPicked: {
+                        settings.notesLocation = path
                     }
+                    callerPage: page
                 }
             }
         }
