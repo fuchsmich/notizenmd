@@ -11,7 +11,9 @@ ApplicationWindow
     initialPage: Component{ NotesBrowser {
             homePath: settings.notesLocation
             title: qsTr("Notes")
-        }  }
+            nameFilters: [ "*.md", "*.txt"]
+        }
+    }
 
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
     allowedOrientations: defaultAllowedOrientations
