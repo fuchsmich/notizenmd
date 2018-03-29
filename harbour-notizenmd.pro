@@ -23,10 +23,10 @@ DISTFILES += qml/harbour-notizenmd.qml \
     rpm/harbour-notizenmd.yaml \
     translations/*.ts \
     harbour-notizenmd.desktop \
-    qml/pages/DirectoryPage.qml \
     qml/pages/MdViewPage.qml \
     qml/pages/Settings.qml \
-    qml/pages/NoteEditPage.qml
+    qml/pages/NoteEditPage.qml \
+    qml/pages/NotesBrowser.qml
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 
