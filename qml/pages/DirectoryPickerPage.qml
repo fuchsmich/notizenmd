@@ -100,7 +100,6 @@ Page {
                             }
                         }
                     )
-                    dialog.directoryPicked.connect(filePicker.directoryPicked)
                 }
                 function pop() {
                     pageStack.pop()
@@ -186,7 +185,7 @@ Page {
             ListView.onRemove: if (page.status === PageStatus.Active) animateRemoval(fileItem)
             onClicked: {
                 if (model.isDir) {
-                    pageStack.push(Qt.resolvedUrl("DirectoryPage.qml"), {
+                    var nextPage = pageStack.push(Qt.resolvedUrl("DirectoryPickerPage.qml"), {
                         path: fileModel.appendPath(model.fileName),
                         homePath: page.homePath,
                         errorNotification: page.errorNotification,
@@ -195,6 +194,7 @@ Page {
                         caseSensitivity: page.caseSensitivity,
                         directorySort: page.directorySort
                     })
+                    nextPage.directoryPicked.connect(page.directoryPicked)
                 } else {
 //                    var filePath = Qt.resolvedUrl(fileModel.path + "/" + model.fileName)
 //                    pageStack.push(Qt.resolvedUrl("MdViewPage.qml"), {
@@ -209,7 +209,7 @@ Page {
                     visible: model.isDir
                     MenuItem {
                         //% "Copy"
-                        text: qsTrId("Choose Folder")
+                        text: qsTr("Choose Folder")
                         onClicked: directoryPicked(model.absolutePath)
                     }
                 }

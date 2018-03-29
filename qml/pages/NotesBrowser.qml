@@ -116,6 +116,7 @@ Page {
             }
 
             MenuItem {
+                visible: homePath == path
                 text: qsTr("Settings")
                 onClicked: pageStack.push(Qt.resolvedUrl("Settings.qml"))
             }
@@ -141,7 +142,7 @@ Page {
 //            title: path == homePath && page.title.length > 0 ? page.title
 //                                                             : page.path.split("/").pop()
             title: page.title
-            description: homePath
+            description: path
         }
 
         delegate: ListItem {
@@ -204,6 +205,7 @@ Page {
                     pageStack.push(Qt.resolvedUrl("NotesBrowser.qml"), {
                         path: fileModel.appendPath(model.fileName),
                         homePath: page.homePath,
+                        title: model.fileName,
                         errorNotification: page.errorNotification,
                         sortBy: page.sortBy,
                         sortOrder: page.sortOrder,

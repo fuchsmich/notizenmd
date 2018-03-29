@@ -62,7 +62,7 @@ Page {
                 id: filePickerPage
                 DirectoryPickerPage {
                     title: "Location of Notes"
-                    homePath: StandardPaths.home
+                    homePath: "/"
                     onDirectoryPicked: {
                         settings.notesLocation = path
                     }
