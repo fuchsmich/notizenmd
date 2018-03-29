@@ -20,13 +20,13 @@ DirectoryPage {
 //        pageStack.push(Qt.resolvedUrl("pages/MdViewPage.qml"), {filePath: selectedContentProperties.filePath});
 //    }
     Component.onCompleted: {
-        console.log(directoryPage.children.length)
-        for (var i=0; i < directoryPage.children.length; i++) {
-            console.log(directoryPage.children[i].toString())
-            if (directoryPage.children[i].toString().indexOf("SilicaListView") > -1) {
-                pdmc.createObject(directoryPage.children[i])
-            }
-        }
+//        console.log(directoryPage.children.length)
+//        for (var i=0; i < directoryPage.children.length; i++) {
+//            console.log(directoryPage.children[i].toString())
+//            if (directoryPage.children[i].toString().indexOf("SilicaListView") > -1) {
+//                pdmc.createObject(directoryPage.children[i])
+//            }
+//        }
 
         //var pdm = pdmc.createObject(directoryPage.listView)
     }

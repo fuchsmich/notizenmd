@@ -16,6 +16,6 @@ ApplicationWindow
     ConfigurationGroup {
         id: settings
         path: "/apps/harbour-notizenmd/settings"
-        property string notesLocation: "/home/nemo"
+        property string notesLocation: StandardPaths.documents
     }
 }

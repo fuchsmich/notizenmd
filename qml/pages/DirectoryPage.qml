@@ -79,15 +79,6 @@ Page {
 //            }
 
             MenuItem {
-                //% "New folder"
-                text: qsTrId("filemanager-me-new_folder")
-                visible: page.showNewFolder
-                onClicked: {
-                    var dialog = pageStack.push(Qt.resolvedUrl("NewFolderDialog.qml"), { path: page.path })
-                }
-            }
-
-            MenuItem {
                 //% "Sort"
                 text: qsTrId("filemanager-me-sort")
                 visible: fileModel.count > 0
@@ -117,12 +108,33 @@ Page {
                 }
             }
 
-//            MenuItem {
-//                //% "Paste"
-//                text: qsTrId("filemanager-me-paste")
-//                visible: FileEngine.clipboardCount > 0
-//                onClicked: FileEngine.pasteFiles(page.path, true)
-//            }
+            MenuItem {
+                //% "Paste"
+                text: qsTrId("filemanager-me-paste")
+                visible: FileEngine.clipboardCount > 0
+                onClicked: FileEngine.pasteFiles(page.path, true)
+            }
+
+            MenuItem {
+                text: qsTr("Settings")
+                onClicked: pageStack.push(Qt.resolvedUrl("Settings.qml"))
+            }
+
+            MenuItem {
+                //% "New folder"
+                text: qsTrId("filemanager-me-new_folder")
+                visible: page.showNewFolder
+                onClicked: {
+                    var dialog = pageStack.push(Qt.resolvedUrl("/usr/lib/qt5/qml/Sailfish/FileManager/NewFolderDialog.qml"), { path: page.path })
+                }
+            }
+
+            MenuItem {
+                text: qsTr("New Note")
+                onClicked: {
+                    //var dialog = pageStack.push(Qt.resolvedUrl("/usr/lib/qt5/qml/Sailfish/FileManager/NewFolderDialog.qml"), { path: page.path })
+                }
+            }
         }
 
         header: PageHeader {
