@@ -44,10 +44,17 @@ Page {
         }
         Column {
             id:col
+            width: parent.width
             TextArea {
-                width: parent.width
                 id: textArea
-                textFormat: TextEdit.RichText
+                width: parent.width
+                //height: implicitHeight
+                //textFormat: TextEdit.RichText
+                readOnly: true
+                wrapMode: TextEdit.Wrap
+                Component.onCompleted: {
+                    _editor.textFormat = TextEdit.RichText
+                }
             }
 
             Python {
