@@ -35,6 +35,7 @@ Page {
 
         PullDownMenu {
             MenuItem {
+                enabled: false
                 text: qsTr("Edit")
                 onClicked: pageStack.push(Qt.resolvedUrl("NoteEditPage.qml"), {
                                               filePath: page.filePath,

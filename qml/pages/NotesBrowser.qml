@@ -83,7 +83,7 @@ Page {
                 text: qsTrId("filemanager-me-sort")
                 visible: fileModel.count > 0
                 onClicked: {
-                    var dialog = pageStack.push(Qt.resolvedUrl("SortingPage.qml"))
+                    var dialog = pageStack.push(Qt.resolvedUrl("/usr/lib/qt5/qml/Sailfish/FileManager/SortingPage.qml"))
                     dialog.selected.connect(
                         function(sortBy, sortOrder, directorySort) {
                             if (sortBy !== fileModel.sortBy || sortOrder !== fileModel.sortOrder) {
@@ -131,6 +131,7 @@ Page {
             }
 
             MenuItem {
+                visible: false
                 text: qsTr("New Note")
                 onClicked: {
                     //var dialog = pageStack.push(Qt.resolvedUrl("/usr/lib/qt5/qml/Sailfish/FileManager/NewFolderDialog.qml"), { path: page.path })
@@ -210,7 +211,8 @@ Page {
                         sortBy: page.sortBy,
                         sortOrder: page.sortOrder,
                         caseSensitivity: page.caseSensitivity,
-                        directorySort: page.directorySort
+                        directorySort: page.directorySort,
+                        nameFilters: page.nameFilters
                     })
                 } else {
                     var filePath = Qt.resolvedUrl(fileModel.path + "/" + model.fileName)

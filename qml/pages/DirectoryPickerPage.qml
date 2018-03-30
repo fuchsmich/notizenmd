@@ -83,7 +83,7 @@ Page {
                 text: qsTrId("filemanager-me-sort")
                 visible: fileModel.count > 0
                 onClicked: {
-                    var dialog = pageStack.push(Qt.resolvedUrl("SortingPage.qml"))
+                    var dialog = pageStack.push(Qt.resolvedUrl("/usr/lib/qt5/qml/Sailfish/FileManager/SortingPage.qml"))
                     dialog.selected.connect(
                         function(sortBy, sortOrder, directorySort) {
                             if (sortBy !== fileModel.sortBy || sortOrder !== fileModel.sortOrder) {
@@ -109,16 +109,18 @@ Page {
             }
 
             MenuItem {
-                text: qsTr("Settings")
-                onClicked: pageStack.push(Qt.resolvedUrl("Settings.qml"))
-            }
-
-            MenuItem {
                 //% "New folder"
                 text: qsTrId("filemanager-me-new_folder")
                 visible: page.showNewFolder
                 onClicked: {
                     var dialog = pageStack.push(Qt.resolvedUrl("/usr/lib/qt5/qml/Sailfish/FileManager/NewFolderDialog.qml"), { path: page.path })
+                }
+            }
+
+            MenuItem {
+                text: qsTr("Pick (%1)").arg(path)
+                onClicked: {
+                    directoryPicked(path)
                 }
             }
         }
@@ -209,7 +211,7 @@ Page {
                     visible: model.isDir
                     MenuItem {
                         //% "Copy"
-                        text: qsTr("Choose Folder")
+                        text: qsTr("Pick Folder")
                         onClicked: directoryPicked(model.absolutePath)
                     }
                 }

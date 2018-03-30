@@ -36,24 +36,24 @@ Page {
                 width: parent.width
 
                 TextField {
-                    id: notesPath
+                    id: notePathTF
                     //x: Theme.horizontalPageMargin
                     width: parent.width - x - resetBtn.width
-                    label: qsTr("Path to notes")
+                    label: qsTr("Path to folder containing notes")
                     text: settings.notesLocation
                 }
                 IconButton {
-                    anchors.verticalCenter: notesPath.verticalCenter
+                    anchors.verticalCenter: notePathTF.verticalCenter
                     id: resetBtn
                     icon.source: "image://theme/icon-m-reset"
-                    onClicked: notesPath.text = ""
+                    onClicked: notePathTF.text = ""
                 }
             }
 
 
             Button {
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: qsTr("Choose File")
+                text: qsTr("Choose Folder")
                 onClicked: pageStack.push(filePickerPage)
                 width: Theme.buttonWidthLarge
             }
@@ -68,6 +68,15 @@ Page {
                     }
                     callerPage: page
                 }
+            }
+
+            TextField {
+                id: fileFilterTF
+                //x: Theme.horizontalPageMargin
+                width: parent.width - 2*x
+                label: qsTr("File filters separated by comma")
+                text: settings.fileNameFilters
+                onTextChanged: settings.fileNameFilters = text;
             }
         }
     }

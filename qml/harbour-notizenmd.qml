@@ -8,10 +8,15 @@ ApplicationWindow
 {
     id: app
     //initialPage: Component { FirstPage { } }
-    initialPage: Component{ NotesBrowser {
+    initialPage: Component{
+        NotesBrowser {
             homePath: settings.notesLocation
             title: qsTr("Notes")
-            nameFilters: [ "*.md", "*.txt"]
+            nameFilters: settings.fileNameFilters.split(",")
+            Component.onCompleted: {
+                console.log(nameFilters, typeof nameFilters, nameFilters.length)
+
+            }
         }
     }
 
@@ -22,5 +27,6 @@ ApplicationWindow
         id: settings
         path: "/apps/harbour-notizenmd/settings"
         property string notesLocation: StandardPaths.documents
+        property string fileNameFilters: ["*.md", "*.txt"].join(",")
     }
 }
