@@ -1,17 +1,24 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import Nemo.FileManager 1.0
+//import Nemo.FileManager 1.0
+import "../components"
 
 Dialog {
     id: dialog
 
     property string path
-    canAccept: folderName.text.length > 0
+    canAccept: fileName.text.length > 0
     onAccepted: {
-        if (!FileEngine.mkdir(path, folderName.text, true)) {
+        file.path = path + "/" + fileName.text;
+        file.create();
+//        if (!FileEngine.mkdir(path, fileName.text, true)) {
             //% "Cannot create folder %1"
-            errorNotification.show(qsTrId("filemanager-la-cannot_create_folder").arg(folderName.text))
-        }
+//            errorNotification.show(qsTrId("filemanager-la-cannot_create_folder").arg(fileName.text))
+//        }
+    }
+
+    FileIO {
+        id: file
     }
 
     SilicaFlickable {
@@ -28,10 +35,10 @@ Dialog {
                 acceptText: qsTrId("filemanager-he-create")
             }
             TextField {
-                id: folderName
+                id: fileName
                 width: parent.width
                 //% "New folder"
-                placeholderText: qsTrId("filemanager-la-new_folder")
+                placeholderText: qsTrId("New note")
                 label: placeholderText
                 focus: true
 

@@ -78,6 +78,19 @@ Page {
                 text: settings.fileNameFilters
                 onTextChanged: settings.fileNameFilters = text;
             }
+
+            ComboBox {
+                id: viewItemSelector
+                width: parent.width
+                currentIndex: settings.viewItemIndex
+                label: qsTr("Select WebView (md by marked.js) or TextArea (md by mistune.py) for viewing notes.")
+                menu: ContextMenu {
+                    MenuItem { text:"TextArea (mistune.py)"
+                        onClicked: settings.viewItemIndex = 0 }
+                    MenuItem { text:"WebView (marked.js)"
+                        onClicked: settings.viewItemIndex = 1 }
+                }
+            }
         }
     }
 }

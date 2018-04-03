@@ -17,6 +17,7 @@ CONFIG += sailfishapp_qml
 DISTFILES += qml/harbour-notizenmd.qml \
     qml/cover/CoverPage.qml \
     qml/html/* \
+    qml/python/* \
     rpm/harbour-notizenmd.changes.in \
     rpm/harbour-notizenmd.changes.run.in \
     rpm/harbour-notizenmd.spec \
@@ -24,12 +25,12 @@ DISTFILES += qml/harbour-notizenmd.qml \
     translations/*.ts \
     harbour-notizenmd.desktop \
     qml/pages/DirectoryPickerPage.qml \
-    qml/pages/MdViewPage.qml \
     qml/pages/NewNoteDialog.qml \
     qml/pages/NotesBrowser.qml \
     qml/pages/Settings.qml \
     qml/pages/EditNotePage.qml \
-    qml/pages/MdViewPage_copy.qml
+    qml/pages/MdViewTextAreaPage.qml \
+    qml/pages/MdWebViewPage.qml
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 

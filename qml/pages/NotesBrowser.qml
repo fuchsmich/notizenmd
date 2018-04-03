@@ -131,10 +131,10 @@ Page {
             }
 
             MenuItem {
-                visible: false
+                //visible: false
                 text: qsTr("New Note")
                 onClicked: {
-                    //var dialog = pageStack.push(Qt.resolvedUrl("/usr/lib/qt5/qml/Sailfish/FileManager/NewFolderDialog.qml"), { path: page.path })
+                    var dialog = pageStack.push(Qt.resolvedUrl("NewNoteDialog.qml"), { path: page.path })
                 }
             }
         }
@@ -171,7 +171,7 @@ Page {
                         anchors.centerIn: parent
                         source: {
                             var iconSource = model.isDir ? "image://theme/icon-m-file-folder"
-                                                         : Theme.iconForMimeType(model.mimeType)
+                                                         : "image://theme/icon-m-file-note" //Theme.iconForMimeType(model.mimeType)
                             return iconSource + (highlighted ? "?" + Theme.highlightColor : "")
                         }
                     }
@@ -215,10 +215,12 @@ Page {
                         nameFilters: page.nameFilters
                     })
                 } else {
-                    var filePath = Qt.resolvedUrl(fileModel.path + "/" + model.fileName)
-                    pageStack.push(Qt.resolvedUrl("MdViewPage_copy.qml"), {
-                                    filePath: filePath
-                                   })
+                    var filePath = fileModel.path + "/" + model.fileName
+                    var pageFile = settings.viewItemIndex == 0 ?
+                                "MdViewTextAreaPage.qml":
+                                "MdWebViewPage.qml"
+                    currentFile.path = filePath
+                    pageStack.push(Qt.resolvedUrl(pageFile))
                 }
             }
 

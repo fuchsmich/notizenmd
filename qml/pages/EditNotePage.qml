@@ -1,28 +1,37 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import "../components"
 
 Page {
     id: page
     allowedOrientations: Orientation.All
 
-    property string filePath
-    property alias text: ta.text
-
     SilicaFlickable {
         anchors.fill: parent
         contentWidth: parent.width
-        contentHeight: col.height + Theme.paddingLarge
+        contentHeight: col.height
 
         VerticalScrollDecorator {}
-        PullDownMenu {
-            MenuItem {
-                text: qsTr("About")
-                onClicked: pageStack.push(Qt.resolvedUrl("About.qml"))
+        Column {
+            id:col
+            width: parent.width
+            PageHeader {
+                title: currentFile.path
+            }
+            TextArea {
+                id: ta
+                property bool loaded: false
+                width: parent.width
+                text: currentFile.content
+                onTextChanged: if (loaded) autosaveTimer.restart()
+                Component.onCompleted: loaded = true;
+            }
+            Timer {
+                id: autosaveTimer
+                interval: 5000
+                onTriggered: currentFile.save(ta.text)
             }
         }
-        TextArea {
-            id: ta
-        }
     }
-
+    Component.onDestruction: currentFile.save(ta.text)
 }

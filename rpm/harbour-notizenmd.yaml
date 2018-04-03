@@ -1,19 +1,19 @@
 Name: harbour-notizenmd
 Summary: Notes in markdown
-Version: 0.1
+Version: 0.2
 Release: 1
 # The contents of the Group field should be one of the groups listed here:
 # https://github.com/mer-tools/spectacle/blob/master/data/GROUPS
-Group: Qt/Qt
-URL: http://example.org/
+Group: Applications/Productivity
+URL: https://github.com/fuchsmich/notizenmd
 BuildArch: noarch
-License: LICENSE
+License: BSD-2
 # This must be generated before uploading a package to a remote build service.
 # Usually this line does not need to be modified.
 Sources:
 - '%{name}-%{version}.tar.bz2'
 Description: |
-  Short description of my Sailfish OS Application
+  Shows Notes formatted with markdown
 Configure: none
 # The qtc5 builder inserts macros to allow QtCreator to have fine
 # control over qmake/make execution
@@ -35,6 +35,7 @@ PkgConfigBR:
 Requires:
   - sailfishsilica-qt5 >= 0.10.9
   - libsailfishapp-launcher
+  - pyotherside-qml-plugin-python3-qt5
 #  - sailfish-components-webview-qt5
 
 # All installed files

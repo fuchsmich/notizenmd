@@ -3,6 +3,7 @@ import Sailfish.Silica 1.0
 import Nemo.Configuration 1.0
 
 import "pages"
+import "components"
 
 ApplicationWindow
 {
@@ -28,5 +29,11 @@ ApplicationWindow
         path: "/apps/harbour-notizenmd/settings"
         property string notesLocation: StandardPaths.documents
         property string fileNameFilters: ["*.md", "*.txt"].join(",")
+        property int viewItemIndex: 0 //0: TextArea; 1: WebView
     }
+
+    FileIO {
+        id: currentFile
+    }
+
 }
