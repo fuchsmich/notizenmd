@@ -3,22 +3,23 @@ Simple markdown notes for SailfishOS
 
 ## TODO
 
-- [ ] View html (for debugging)
-- [ ] About.qml
+- [ ] About.qml (references to other projects)
 - [ ] Cover.qml
+- [ ] Translation
 - [ ] Custom css?
 - [ ] Syntax Highlighting?
 - [ ] Sync filename with title of note (if present)?
 
 v0.3
+- [x] View html (for debugging)
 - [x] Switch view on the fly
 
 v0.2
 - [x] Lizenz
-- [x] Edit Notes (FileIO als property)
+- [x] Edit notes
 - [x] Fileicon to noteicon
 - [x] Set folder when changing path manually
-- [x] New Note
+- [x] Create new note
 - [x] Choose Webview or TextArea
 
 v0.1

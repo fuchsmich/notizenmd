@@ -6,6 +6,7 @@
 </head>
 <body>
   <div id="placeholder"></div>
+  <code id="codeplaceholder" style="white-space: pre-wrap;"></code>
   <div id="jserror"></div>
     <script>
     var jserror = document.getElementById('jserror');
@@ -18,9 +19,14 @@
     <script src="marked/marked.min.js"></script>
     <script>
     var placeholder = document.getElementById('placeholder');
+    var codeplaceholder = document.getElementById('codeplaceholder');
 
     var updateText = function(text) {
         placeholder.innerHTML = marked(text);
+    }
+    var showHTML = function() {
+        codeplaceholder.innerHTML = placeholder.innerHTML.replace(/</g,'&lt;').replace(/>/g,'&gt;');
+        placeholder.innerHTML = '';
     }
     </script>
 </body>

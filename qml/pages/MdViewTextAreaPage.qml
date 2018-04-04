@@ -22,6 +22,10 @@ Page {
 
         PullDownMenu {
             MenuItem {
+                text: qsTr("View html")
+                onClicked: textArea.toggleRT()
+            }
+            MenuItem {
                 text: qsTr("Switch to %1").arg("WebView")
                 onClicked: pageStack.replace(Qt.resolvedUrl("MdWebViewPage.qml"))
             }
@@ -48,6 +52,11 @@ Page {
                 wrapMode: TextEdit.Wrap
                 Component.onCompleted: {
                     _editor.textFormat = TextEdit.RichText
+                }
+                function toggleRT() {
+                    _editor.textFormat = ( _editor.textFormat == TextEdit.RichText ?
+                                              TextEdit.PlainText :
+                                              TextEdit.RichText)
                 }
             }
         }

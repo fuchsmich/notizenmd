@@ -24,6 +24,10 @@ Page {
 
         PullDownMenu {
             MenuItem {
+                text: qsTr("View html")
+                onClicked: webView.showHTML()
+            }
+            MenuItem {
                 text: qsTr("Switch to %1").arg("TextArea")
                 onClicked: pageStack.replace(Qt.resolvedUrl("MdViewTextAreaPage.qml"))
             }
@@ -41,6 +45,11 @@ Page {
 
         function updateText(text) {
             var script = 'updateText(' + JSON.stringify(text) + ')';
+            console.log(script);
+            webView.experimental.evaluateJavaScript(script , function(){})
+        }
+        function showHTML(text) {
+            var script = 'showHTML()';
             console.log(script);
             webView.experimental.evaluateJavaScript(script , function(){})
         }
