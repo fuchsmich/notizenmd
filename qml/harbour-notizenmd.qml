@@ -36,4 +36,8 @@ ApplicationWindow
         id: currentFile
     }
 
+    Mistune {
+        id: mistune
+    }
+
 }

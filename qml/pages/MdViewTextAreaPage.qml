@@ -1,7 +1,5 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-//import QtWebKit.experimental 1.0
-import io.thp.pyotherside 1.4
 import "../components"
 
 
@@ -11,18 +9,11 @@ Page {
     allowedOrientations: Orientation.All
     property string filePath: currentFile.path
     property string md: currentFile.content
-    onMdChanged: py.call('mistune.markdown', [md], function(text){
+    onMdChanged: mistune.call('mistune.markdown', [md], function(text){
         var html = "<html>" + text + "</html>";
         textArea.text = html;
     })
 
-    Python {
-        id: py
-        Component.onCompleted: {
-            addImportPath(Qt.resolvedUrl('../python'));
-            importModule('mistune', function() {});
-        }
-    }
 
     SilicaFlickable {
         anchors.fill: parent        
@@ -30,6 +21,10 @@ Page {
         contentHeight: col.height + Theme.paddingLarge
 
         PullDownMenu {
+            MenuItem {
+                text: qsTr("Switch to %1").arg("WebView")
+                onClicked: pageStack.replace(Qt.resolvedUrl("MdWebViewPage.qml"))
+            }
             MenuItem {
                 text: qsTr("Edit")
                 onClicked: pageStack.push(Qt.resolvedUrl("EditNotePage.qml"))

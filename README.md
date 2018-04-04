@@ -3,11 +3,15 @@ Simple markdown notes for SailfishOS
 
 ## TODO
 
+- [ ] View html (for debugging)
 - [ ] About.qml
 - [ ] Cover.qml
 - [ ] Custom css?
 - [ ] Syntax Highlighting?
 - [ ] Sync filename with title of note (if present)?
+
+v0.3
+- [x] Switch view on the fly
 
 v0.2
 - [x] Lizenz

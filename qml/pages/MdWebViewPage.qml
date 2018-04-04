@@ -24,6 +24,10 @@ Page {
 
         PullDownMenu {
             MenuItem {
+                text: qsTr("Switch to %1").arg("TextArea")
+                onClicked: pageStack.replace(Qt.resolvedUrl("MdViewTextAreaPage.qml"))
+            }
+            MenuItem {
                 text: qsTr("Edit")
                 onClicked: pageStack.push(Qt.resolvedUrl("EditNotePage.qml"))
             }
