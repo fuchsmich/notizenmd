@@ -3,6 +3,8 @@ Simple markdown notes for SailfishOS
 
 ## TODO
 
+- [ ] append extension on adding note
+- [ ] option editing on adding note
 - [ ] About.qml (references to other projects)
 - [ ] Cover.qml
 - [ ] Translation
