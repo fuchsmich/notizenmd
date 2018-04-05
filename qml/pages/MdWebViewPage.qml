@@ -38,7 +38,7 @@ Page {
         }
 
         header: PageHeader {
-            title: page.filePath
+            description: page.filePath
         }
 
         url: Qt.resolvedUrl("../html/index.html")

@@ -39,7 +39,7 @@ Page {
             id:col
             width: parent.width
             PageHeader {
-                title: page.filePath
+                description: page.filePath
             }
 
             TextArea {
