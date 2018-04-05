@@ -3,8 +3,10 @@ Simple markdown notes for SailfishOS
 
 ## TODO
 
+- [ ] Example files for demo
 - [ ] Handle links (external/internal)
 - [ ] About.qml (references to other projects)
+    - [ ] Reference to other projects
 - [ ] Cover.qml
 - [ ] Start translation
     - [ ] Translation (dependency for openrepos)
@@ -13,8 +15,8 @@ Simple markdown notes for SailfishOS
 - [ ] Sync filename with title of note (if present)?
 
 v0.3
-- [x] append extension on adding note
-- [x] option editing on adding note (remind choice)
+- [x] Append extension on adding note
+- [x] Option editing on adding note (remember choice)
 - [x] View html (for debugging)
 - [x] Switch view on the fly
 
