@@ -16,7 +16,7 @@ Page {
             id:col
             width: parent.width
             PageHeader {
-                title: currentFile.path
+                description: currentFile.path
             }
             TextArea {
                 id: ta

@@ -71,13 +71,6 @@ Page {
 
         PullDownMenu {
 
-//            MenuItem {
-//                //% "Format"
-//                text: qsTrId("filemanager-me-format")
-//                visible: showFormat
-//                onClicked: page.formatClicked()
-//            }
-
             MenuItem {
                 //% "Sort"
                 text: qsTrId("filemanager-me-sort")
@@ -131,10 +124,11 @@ Page {
             }
 
             MenuItem {
-                //visible: false
                 text: qsTr("New Note")
                 onClicked: {
-                    var dialog = pageStack.push(Qt.resolvedUrl("NewNoteDialog.qml"), { path: page.path })
+                    var dialog = pageStack.push(Qt.resolvedUrl("NewNoteDialog.qml"), { path: page.path });
+//                    dialog.accepted.connect(function(){
+//                    })
                 }
             }
         }

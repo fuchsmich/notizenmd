@@ -30,6 +30,8 @@ ApplicationWindow
         property string notesLocation: StandardPaths.documents
         property string fileNameFilters: ["*.md", "*.txt"].join(",")
         property int viewItemIndex: 0 //0: TextArea; 1: WebView
+        property bool addExtensionOnCreate: false
+        property bool editNoteOnCreate: false
     }
 
     FileIO {

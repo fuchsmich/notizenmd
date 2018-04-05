@@ -76,10 +76,6 @@
         <source>Create</source>
         <translation type="unfinished"></translation>
     </message>
-    <message id="New note">
-        <source>New folder</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message id="filemanager-me-paste">
         <source>Paste</source>
         <translation type="unfinished"></translation>
@@ -131,6 +127,21 @@
     </message>
     <message>
         <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>NewNoteDialog</name>
+    <message>
+        <source>New note</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto-add extension (.md)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit note after creation.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
