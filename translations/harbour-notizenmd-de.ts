@@ -93,105 +93,105 @@
     <name>DirectoryPickerPage</name>
     <message>
         <source>Pick (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>(%1) auswählen</translation>
     </message>
     <message>
         <source>Pick Folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordner auswählen</translation>
     </message>
 </context>
 <context>
     <name>MdViewTextAreaPage</name>
     <message>
         <source>View html</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeige html</translation>
     </message>
     <message>
         <source>Switch to %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Wechsle zu %1</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Bearbeiten</translation>
     </message>
 </context>
 <context>
     <name>MdWebViewPage</name>
     <message>
         <source>View html</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeige html</translation>
     </message>
     <message>
         <source>Switch to %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Wechsle zu %1</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Bearbeiten</translation>
     </message>
 </context>
 <context>
     <name>NewNoteDialog</name>
     <message>
         <source>New note</source>
-        <translation type="unfinished"></translation>
+        <translation>Neue Notiz</translation>
     </message>
     <message>
         <source>Auto-add extension (.md)</source>
-        <translation type="unfinished"></translation>
+        <translation>Erweiterung (.md) automatisch anhängen.</translation>
     </message>
     <message>
         <source>Edit note after creation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Notiz nach erstellen bearbeiten.</translation>
     </message>
 </context>
 <context>
     <name>NotesBrowser</name>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellungen</translation>
     </message>
     <message>
         <source>New Note</source>
-        <translation type="unfinished"></translation>
+        <translation>Neue Notiz</translation>
     </message>
 </context>
 <context>
     <name>Settings</name>
     <message>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Über</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellungen</translation>
     </message>
     <message>
         <source>Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Dateien</translation>
     </message>
     <message>
         <source>Path to folder containing notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Pfad zum Ordner, der Notizen enthält</translation>
     </message>
     <message>
         <source>Choose Folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordner auswählen</translation>
     </message>
     <message>
         <source>File filters separated by comma</source>
-        <translation type="unfinished"></translation>
+        <translation>Dateifilter durch Beistrich getrennt</translation>
     </message>
     <message>
         <source>Select WebView (md by marked.js) or TextArea (md by mistune.py) for viewing notes.</source>
-        <translation type="unfinished"></translation>
+        <translation>WebView (md mit marked.js) oder TextArea (md mit mistune.py) zum Anzeigen der Notizen auswählen.</translation>
     </message>
 </context>
 <context>
     <name>harbour-notizenmd</name>
     <message>
         <source>Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Notizen</translation>
     </message>
 </context>
 </TS>
