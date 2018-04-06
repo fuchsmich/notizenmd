@@ -8,13 +8,12 @@ Simple markdown notes for SailfishOS
 - [ ] About.qml (references to other projects)
     - [ ] Reference to other projects
 - [ ] Cover.qml
-- [ ] Start translation
-    - [ ] Translation (dependency for openrepos)
 - [ ] Custom css?
 - [ ] Syntax Highlighting?
 - [ ] Sync filename with title of note (if present)?
 
 v0.3
+- [x] Start translation
 - [x] Append extension on adding note
 - [x] Option editing on adding note (remember choice)
 - [x] View html (for debugging)
