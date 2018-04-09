@@ -38,7 +38,7 @@ Page {
     Component.onDestruction: currentFile.save(ta.text)
     function loadCheatsheet() {
         var req =  new XMLHttpRequest();
-        req.open('GET', Qt.resolvedUrl("/usr/share/harbour-notizenmd/qml/html/marked/docs/Markdown Cheatsheet.md"));
+        req.open('GET', Qt.resolvedUrl("/usr/share/harbour-notizenmd/qml/docs/Markdown Cheatsheet.md"));
         req.onreadystatechange = function(event) {
             if (req.readyState === XMLHttpRequest.DONE) {
                 //console.log("cheat text")
