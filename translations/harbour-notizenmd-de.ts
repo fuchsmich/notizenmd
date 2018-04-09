@@ -104,7 +104,7 @@
     <name>EditNotePage</name>
     <message>
         <source>CheatSheet</source>
-        <translation type="unfinished"></translation>
+        <translation>CheatSheet</translation>
     </message>
 </context>
 <context>
