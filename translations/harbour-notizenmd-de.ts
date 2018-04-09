@@ -101,6 +101,13 @@
     </message>
 </context>
 <context>
+    <name>EditNotePage</name>
+    <message>
+        <source>CheatSheet</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MdViewTextAreaPage</name>
     <message>
         <source>View html</source>

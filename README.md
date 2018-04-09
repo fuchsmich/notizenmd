@@ -12,6 +12,10 @@ Simple markdown notes for SailfishOS
 - [ ] Syntax Highlighting?
 - [ ] Sync filename with title of note (if present)?
 
+v0.4
+- [ ] Attach cheatsheet to EditPage
+
+
 v0.3
 - [x] Start translation
 - [x] Append extension on adding note

@@ -145,7 +145,9 @@ Page {
 
             function remove() {
                 //% "Deleting"
-                remorseAction(qsTrId("filemanager-la-deleting"), function() { FileEngine.deleteFiles(fileModel.fileNameAt(model.index), true) })
+                remorseAction(qsTrId("filemanager-la-deleting"), function() {
+                    FileEngine.deleteFiles(fileModel.fileNameAt(model.index), true)
+                })
             }
 
             width: ListView.view.width

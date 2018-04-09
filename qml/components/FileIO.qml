@@ -14,7 +14,7 @@ Python {
         console.log("reading", pythonReady, path)
         if (pythonReady && path) {
             py.call('fileio.read', [path], function(result){
-                console.log(result);
+                //console.log(result);
                 content = result;
             });
         }
@@ -36,7 +36,7 @@ Python {
     Component.onCompleted: {
         addImportPath(Qt.resolvedUrl('../python'));
         importModule('fileio', function() {});
-        console.log("ready")
+        //console.log("ready")
         pythonReady = true;
     }
 
