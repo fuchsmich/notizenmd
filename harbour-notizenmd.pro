@@ -33,6 +33,7 @@ DISTFILES += qml/harbour-notizenmd.qml \
     qml/pages/MdWebViewPage.qml \
     qml/components/Mistune.qml
 
+
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 
 # to disable building translations every time, comment out the

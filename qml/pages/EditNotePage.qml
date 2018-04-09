@@ -5,6 +5,8 @@ import "../components"
 Page {
     id: page
     allowedOrientations: Orientation.All
+    property string cheatText: ""
+    onCheatTextChanged: if (status == PageStatus.Active) attachCheatPage();
 
     SilicaFlickable {
         anchors.fill: parent
@@ -34,4 +36,32 @@ Page {
         }
     }
     Component.onDestruction: currentFile.save(ta.text)
+    function loadCheatsheet() {
+        var req =  new XMLHttpRequest();
+        req.open('GET', Qt.resolvedUrl("/usr/share/harbour-notizenmd/qml/docs/Markdown Cheatsheet.md"));
+        req.onreadystatechange = function(event) {
+            if (req.readyState === XMLHttpRequest.DONE) {
+                //console.log("cheat text")
+                cheatText = req.responseText;
+            }
+        }
+        req.send()
+    }
+
+    function attachCheatPage() {
+        var pageFile = settings.viewItemIndex == 0 ?
+                    "MdViewTextAreaPage.qml":
+                    "MdWebViewPage.qml";
+        pageStack.pushAttached(Qt.resolvedUrl(pageFile), {
+                                   "text": cheatText,
+                                   "title": qsTr("CheatSheet"),
+                                   "filePath": ""});
+    }
+
+    Component.onCompleted: loadCheatsheet()
+
+    onStatusChanged:
+        if (status == PageStatus.Active && cheatText != "") {
+            attachCheatPage();
+        }
 }

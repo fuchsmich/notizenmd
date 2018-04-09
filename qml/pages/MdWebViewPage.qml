@@ -7,10 +7,11 @@ Page {
     id: page
 
     allowedOrientations: Orientation.All
+    property string title: ""
     property string filePath: currentFile.path
     property string text: currentFile.content
     onTextChanged: {
-        console.log(text);
+        //console.log(text);
         webView.updateText(text)
     }
 
@@ -38,6 +39,7 @@ Page {
         }
 
         header: PageHeader {
+            title: page.title
             description: page.filePath
         }
 
@@ -45,18 +47,16 @@ Page {
 
         function updateText(text) {
             var script = 'updateText(' + JSON.stringify(text) + ')';
-            console.log(script);
+            //console.log(script);
             webView.experimental.evaluateJavaScript(script , function(){})
         }
         function showHTML(text) {
             var script = 'showHTML()';
-            console.log(script);
+            //console.log(script);
             webView.experimental.evaluateJavaScript(script , function(){})
         }
 
 
-        Component.onCompleted: {
-        }
         signal messageReceived(var message)
 
         function runJavaScript(script, callback) {

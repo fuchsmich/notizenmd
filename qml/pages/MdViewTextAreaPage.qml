@@ -8,8 +8,8 @@ Page {
 
     allowedOrientations: Orientation.All
     property string filePath: currentFile.path
-    property string md: currentFile.content
-    onMdChanged: mistune.call('mistune.markdown', [md], function(text){
+    property string text: currentFile.content
+    onTextChanged: mistune.call('mistune.markdown', [text], function(text){
         var html = "<html>" + text + "</html>";
         textArea.text = html;
     })
@@ -63,7 +63,7 @@ Page {
     }
     onStatusChanged: {
         if (status === PageStatus.Active) {
-            console.log("page active")
+            //console.log("page active")
             currentFile.read();
         }
     }
