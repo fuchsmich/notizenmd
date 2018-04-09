@@ -9,11 +9,11 @@ Simple markdown notes for SailfishOS
     - [ ] Reference to other projects
 - [ ] Cover.qml
 - [ ] Custom css?
-- [ ] Syntax Highlighting?
+- [ ] Syntax highlighting in editor
 - [ ] Sync filename with title of note (if present)?
 
 v0.4
-- [ ] Attach cheatsheet to EditPage
+- [x] Attach cheatsheet to EditPage
 
 
 v0.3
