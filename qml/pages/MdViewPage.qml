@@ -19,13 +19,13 @@ Page {
         id: file
     }
 
-    SilicaWebView {
-        id: webView
-        property string markdown: ""
-        onMarkdownChanged: {}
-
+    Loader {
+        id: viewLoader
         anchors.fill: parent
+    }
 
+    Component {
+        id: pullDownComp
         PullDownMenu {
             id: pullDown
             MenuItem {
@@ -41,37 +41,14 @@ Page {
                 onClicked: pageStack.push(Qt.resolvedUrl("EditNotePage.qml"))
             }
         }
+    }
 
-        header: PageHeader {
+    Component {
+        id: headerComp
+        PageHeader {
             title: page.title
             description: page.filePath
         }
-
-        url: Qt.resolvedUrl("../html/index.html")
-
-        function updateText(text) {
-            var script = 'updateText(' + JSON.stringify(text) + ')';
-            //console.log(script);
-            webView.experimental.evaluateJavaScript(script , function(){})
-        }
-        function showHTML(text) {
-            var script = 'showHTML()';
-            //console.log(script);
-            webView.experimental.evaluateJavaScript(script , function(){})
-        }
-
-
-//        signal messageReceived(var message)
-
-//        function runJavaScript(script, callback) {
-//            return webView.experimental.evaluateJavaScript(script, callback);
-//        }
-
-        experimental.preferences.navigatorQtObjectEnabled: true
-        experimental.onMessageReceived: console.log(message.data)
-
-        onLoadingChanged: if (loadRequest.status === WebView.LoadSucceededStatus) updateText(page.text)
-
     }
 
     onStatusChanged: {
@@ -105,8 +82,24 @@ Page {
                 filePath: settings.cheatSheetURL
             }
             StateChangeScript {
-                 name: "loadCheatsheet"
-                 script: loadCheatsheet()
+                name: "loadCheatsheet"
+                script: loadCheatsheet()
+            }
+        },
+        State {
+            name: "textArea"
+            when: settings.viewItemIndex === 0
+            PropertyChanges {
+                target: viewLoader
+                source: Qt.resolvedUrl("../components/MDTextArea.qml")
+            }
+        },
+        State {
+            name: "webView"
+            when: settings.viewItemIndex === 1
+            PropertyChanges {
+                target: viewLoader
+                source: Qt.resolvedUrl("../components/MDWebView.qml")
             }
         }
     ]

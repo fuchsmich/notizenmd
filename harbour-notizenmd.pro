@@ -30,8 +30,10 @@ DISTFILES += qml/harbour-notizenmd.qml \
     qml/pages/Settings.qml \
     qml/pages/EditNotePage.qml \
     qml/pages/MdViewTextAreaPage.qml \
-    qml/pages/MdWebViewPage.qml \
-    qml/components/Mistune.qml
+    qml/components/Mistune.qml \
+    qml/pages/MdViewPage.qml \
+    qml/components/MdWebView.qml \
+    qml/components/MdTextArea.qml
 
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
