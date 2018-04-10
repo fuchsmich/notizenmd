@@ -7,26 +7,23 @@ Page {
     id: page
 
     allowedOrientations: Orientation.All
-    property string title: ""
-    property string filePath: currentFile.path
-    property string text: currentFile.content
+    property string title: (viewCheatSheet ? qsTr("CheatSheet") : "")
+    property string description: (viewCheatSheet ? "" : currentFile.path )
     property int viewMode: settings.viewItemIndex
+    property bool viewCheatSheet: false
 
     Loader {
         id: viewLoader
         anchors.fill: parent
         onLoaded: {
-            item.header = headerComp;
-            item.pullDownMenu = pullDownComp.createObject(item)
-            item.markdown = Qt.binding(function(){ return currentFile.content })
-        }
-    }
-
-    Component {
-        id: headerComp
-        PageHeader {
-            title: page.title
-            description: page.filePath
+            item.title = page.title;
+            item.description = page.description;
+            if (!viewCheatSheet) {
+                item.pullDownMenu = pullDownComp.createObject(item);
+                item.markdown = Qt.binding(function(){ return currentFile.content });
+            } else {
+                loadCheatsheet();
+            }
         }
     }
 
@@ -60,29 +57,13 @@ Page {
         req.onreadystatechange = function(event) {
             if (req.readyState === XMLHttpRequest.DONE) {
                 //console.log("cheat text")
-                page.text = req.responseText;
+                viewLoader.item.markdown = req.responseText;
             }
         }
         req.send()
     }
 
     states: [
-        State {
-            name: "cheatsheet"
-            PropertyChanges {
-                target: pullDown
-                visible: false
-            }
-            PropertyChanges {
-                target: page
-                title: qsTr("Cheatsheet")
-                filePath: settings.cheatSheetURL
-            }
-            StateChangeScript {
-                name: "loadCheatsheet"
-                script: loadCheatsheet()
-            }
-        },
         State {
             name: "textArea"
             when: viewMode === 0
@@ -98,9 +79,8 @@ Page {
                 target: viewLoader
                 source: Qt.resolvedUrl("../components/MdWebView.qml")
             }
-            PropertyChanges {
-                target: viewLoader.item
-            }
         }
     ]
+
+    onStateChanged: console.log(state)
 }

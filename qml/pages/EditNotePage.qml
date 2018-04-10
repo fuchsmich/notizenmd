@@ -5,8 +5,6 @@ import "../components"
 Page {
     id: page
     allowedOrientations: Orientation.All
-//    property string cheatText: ""
-//    onCheatTextChanged: if (status == PageStatus.Active) attachCheatPage();
 
     SilicaFlickable {
         anchors.fill: parent
@@ -37,19 +35,10 @@ Page {
     }
     Component.onDestruction: currentFile.save(ta.text)
 
-    function attachCheatPage() {
-        var pageFile = settings.viewItemIndex == 0 ?
-                    "MdViewTextAreaPage.qml":
-                    "MdWebViewPage.qml";
-        pageStack.pushAttached(Qt.resolvedUrl(pageFile), {
-                                   "state": "cheatSheet"
-                               });
-    }
-
-    Component.onCompleted: loadCheatsheet()
-
     onStatusChanged:
-        if (status == PageStatus.Active && cheatText != "") {
-            attachCheatPage();
+        if (status == PageStatus.Active) {
+            pageStack.pushAttached(Qt.resolvedUrl("MdViewPage.qml"), {
+                                       "viewCheatSheet": true
+                                   });
         }
 }

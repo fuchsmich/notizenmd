@@ -8,6 +8,12 @@ SilicaWebView {
     onMarkdownChanged: {
         updateText(markdown)
     }
+    property string title: ""
+    property string description: ""
+    header: PageHeader {
+        title: webView.title
+        description: webView.description
+    }
 
     url: Qt.resolvedUrl("../html/index.html")
 

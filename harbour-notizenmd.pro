@@ -29,7 +29,6 @@ DISTFILES += qml/harbour-notizenmd.qml \
     qml/pages/NotesBrowser.qml \
     qml/pages/Settings.qml \
     qml/pages/EditNotePage.qml \
-    qml/pages/MdViewTextAreaPage.qml \
     qml/components/Mistune.qml \
     qml/pages/MdViewPage.qml \
     qml/components/MdTextArea.qml \

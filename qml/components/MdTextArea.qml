@@ -2,6 +2,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 SilicaFlickable {
+    id: flick
     contentHeight: col.height + Theme.paddingLarge
     contentWidth: col.width
     property string markdown: ""
@@ -10,19 +11,16 @@ SilicaFlickable {
             textArea.text = html;
         })
     }
-
-//header?
-    property Component header: Component {
-        PageHeader {
-            title: "placeholder"
-        }
-    }
+    property string title: ""
+    property string description: ""
 
     Column {
         id:col
         width: parent.width
-        Loader {
-            sourceComponent: header
+
+        PageHeader {
+            title: flick.title
+            description: flick.description
         }
 
         TextArea {
