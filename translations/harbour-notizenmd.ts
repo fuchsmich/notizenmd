@@ -101,7 +101,11 @@
     </message>
 </context>
 <context>
-    <name>MdViewTextAreaPage</name>
+    <name>MdViewPage</name>
+    <message>
+        <source>Cheatsheet</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message>
         <source>View html</source>
         <translation type="unfinished"></translation>
@@ -114,13 +118,24 @@
         <source>Edit</source>
         <translation type="unfinished"></translation>
     </message>
+</context>
+<context>
+    <name>MdViewPullDown</name>
     <message>
-        <source>Cheatsheet</source>
+        <source>View html</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch to %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>MdWebViewPage</name>
+    <name>MdViewTextAreaPage</name>
     <message>
         <source>View html</source>
         <translation type="unfinished"></translation>

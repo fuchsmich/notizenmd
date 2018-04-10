@@ -1,6 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import QtWebKit.experimental 1.0
+//import QtWebKit.experimental 1.0
 import "../components"
 
 Page {
@@ -10,36 +10,15 @@ Page {
     property string title: ""
     property string filePath: currentFile.path
     property string text: currentFile.content
-    onTextChanged: {
-        //console.log(text);
-        webView.updateText(text)
-    }
-
-    FileIO {
-        id: file
-    }
+    property int viewMode: settings.viewItemIndex
 
     Loader {
         id: viewLoader
         anchors.fill: parent
-    }
-
-    Component {
-        id: pullDownComp
-        PullDownMenu {
-            id: pullDown
-            MenuItem {
-                text: qsTr("View html")
-                onClicked: webView.showHTML()
-            }
-            MenuItem {
-                text: qsTr("Switch to %1").arg("TextArea")
-                onClicked: pageStack.replace(Qt.resolvedUrl("MdViewTextAreaPage.qml"))
-            }
-            MenuItem {
-                text: qsTr("Edit")
-                onClicked: pageStack.push(Qt.resolvedUrl("EditNotePage.qml"))
-            }
+        onLoaded: {
+            item.header = headerComp;
+            item.pullDownMenu = pullDownComp.createObject(item)
+            item.markdown = Qt.binding(function(){ return currentFile.content })
         }
     }
 
@@ -48,6 +27,24 @@ Page {
         PageHeader {
             title: page.title
             description: page.filePath
+        }
+    }
+
+    Component {
+        id: pullDownComp
+        PullDownMenu {
+            MenuItem {
+                text: qsTr("View html")
+                onClicked: textArea.toggleRT()
+            }
+            MenuItem {
+                text: qsTr("Switch to %1").arg((viewMode === 0 ? "WebView" : "TextArea"))
+                onClicked: viewMode = !viewMode*1
+            }
+            MenuItem {
+                text: qsTr("Edit")
+                onClicked: pageStack.push(Qt.resolvedUrl("EditNotePage.qml"))
+            }
         }
     }
 
@@ -88,18 +85,21 @@ Page {
         },
         State {
             name: "textArea"
-            when: settings.viewItemIndex === 0
+            when: viewMode === 0
             PropertyChanges {
                 target: viewLoader
-                source: Qt.resolvedUrl("../components/MDTextArea.qml")
+                source: Qt.resolvedUrl("../components/MdTextArea.qml")
             }
         },
         State {
             name: "webView"
-            when: settings.viewItemIndex === 1
+            when: viewMode === 1
             PropertyChanges {
                 target: viewLoader
-                source: Qt.resolvedUrl("../components/MDWebView.qml")
+                source: Qt.resolvedUrl("../components/MdWebView.qml")
+            }
+            PropertyChanges {
+                target: viewLoader.item
             }
         }
     ]

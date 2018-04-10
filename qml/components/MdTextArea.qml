@@ -1,20 +1,28 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import QtWebKit.experimental 1.0
 
 SilicaFlickable {
     contentHeight: col.height + Theme.paddingLarge
+    contentWidth: col.width
     property string markdown: ""
-    onMarkdownChanged: {}
+    onMarkdownChanged: {
+        mistune.call('mistune.markdown', [markdown], function(html){
+            textArea.text = html;
+        })
+    }
 
 //header?
-    property Item header: PageHeader { }
+    property Component header: Component {
+        PageHeader {
+            title: "placeholder"
+        }
+    }
 
     Column {
         id:col
         width: parent.width
         Loader {
-            source: header
+            sourceComponent: header
         }
 
         TextArea {

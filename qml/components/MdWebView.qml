@@ -5,7 +5,9 @@ import QtWebKit.experimental 1.0
 SilicaWebView {
     id: webView
     property string markdown: ""
-    onMarkdownChanged: {}
+    onMarkdownChanged: {
+        updateText(markdown)
+    }
 
     url: Qt.resolvedUrl("../html/index.html")
 
@@ -20,16 +22,8 @@ SilicaWebView {
         webView.experimental.evaluateJavaScript(script , function(){})
     }
 
-
-    //        signal messageReceived(var message)
-
-    //        function runJavaScript(script, callback) {
-    //            return webView.experimental.evaluateJavaScript(script, callback);
-    //        }
-
     experimental.preferences.navigatorQtObjectEnabled: true
     experimental.onMessageReceived: console.log(message.data)
 
-    onLoadingChanged: if (loadRequest.status === WebView.LoadSucceededStatus) updateText(page.text)
-
+    onLoadingChanged: if (loadRequest.status === WebView.LoadSucceededStatus) updateText(markdown)
 }
