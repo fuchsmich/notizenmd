@@ -7,29 +7,6 @@ SilicaWebView {
     property string markdown: ""
     onMarkdownChanged: {}
 
-    anchors.fill: parent
-
-    PullDownMenu {
-        id: pullDown
-        MenuItem {
-            text: qsTr("View html")
-            onClicked: webView.showHTML()
-        }
-        MenuItem {
-            text: qsTr("Switch to %1").arg("TextArea")
-            onClicked: pageStack.replace(Qt.resolvedUrl("MdViewTextAreaPage.qml"))
-        }
-        MenuItem {
-            text: qsTr("Edit")
-            onClicked: pageStack.push(Qt.resolvedUrl("EditNotePage.qml"))
-        }
-    }
-
-    header: PageHeader {
-        title: page.title
-        description: page.filePath
-    }
-
     url: Qt.resolvedUrl("../html/index.html")
 
     function updateText(text) {
