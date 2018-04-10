@@ -24,6 +24,7 @@ Page {
         anchors.fill: parent
 
         PullDownMenu {
+            id: pullDown
             MenuItem {
                 text: qsTr("View html")
                 onClicked: webView.showHTML()
@@ -75,4 +76,35 @@ Page {
             currentFile.read();
         }
     }
+
+    function loadCheatsheet() {
+        var req =  new XMLHttpRequest();
+        req.open('GET', Qt.resolvedUrl("/usr/share/harbour-notizenmd/qml/docs/Markdown Cheatsheet.md"));
+        req.onreadystatechange = function(event) {
+            if (req.readyState === XMLHttpRequest.DONE) {
+                //console.log("cheat text")
+                page.text = req.responseText;
+            }
+        }
+        req.send()
+    }
+
+    states: [
+        State {
+            name: "cheatsheet"
+            PropertyChanges {
+                target: pullDown
+                visible: false
+            }
+            PropertyChanges {
+                target: page
+                title: qsTr("Cheatsheet")
+                filePath: settings.cheatSheetURL
+            }
+            StateChangeScript {
+                 name: "loadCheatsheet"
+                 script: loadCheatsheet()
+            }
+        }
+    ]
 }

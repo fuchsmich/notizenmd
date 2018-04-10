@@ -7,6 +7,7 @@ Page {
     id: page
 
     allowedOrientations: Orientation.All
+    property string title: ""
     property string filePath: currentFile.path
     property string text: currentFile.content
     onTextChanged: mistune.call('mistune.markdown', [text], function(text){
@@ -39,6 +40,7 @@ Page {
             id:col
             width: parent.width
             PageHeader {
+                title: page.title
                 description: page.filePath
             }
 
@@ -67,4 +69,35 @@ Page {
             currentFile.read();
         }
     }
+
+    function loadCheatsheet() {
+        var req =  new XMLHttpRequest();
+        req.open('GET', Qt.resolvedUrl("/usr/share/harbour-notizenmd/qml/docs/Markdown Cheatsheet.md"));
+        req.onreadystatechange = function(event) {
+            if (req.readyState === XMLHttpRequest.DONE) {
+                //console.log("cheat text")
+                page.text = req.responseText;
+            }
+        }
+        req.send()
+    }
+
+    states: [
+        State {
+            name: "cheatsheet"
+            PropertyChanges {
+                target: pullDown
+                visible: false
+            }
+            PropertyChanges {
+                target: page
+                title: qsTr("Cheatsheet")
+                filePath: settings.cheatSheetURL
+            }
+            StateChangeScript {
+                 name: "loadCheatsheet"
+                 script: loadCheatsheet()
+            }
+        }
+    ]
 }

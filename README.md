@@ -3,11 +3,14 @@ Simple markdown notes for SailfishOS
 
 ## TODO
 
-- [ ] Example files for demo
-- [ ] Handle links (external/internal)
+- [ ] Cheatsheet no edit etc
+- [ ] Move WebView/TextArea into components, switch with states
 - [ ] About.qml (references to other projects)
     - [ ] Reference to other projects
 - [ ] Cover.qml
+- [ ] TOC?
+- [ ] Handle links (external/internal)
+- [ ] Example files for demo
 - [ ] Custom css?
 - [ ] Syntax highlighting in editor
 - [ ] Sync filename with title of note (if present)?
