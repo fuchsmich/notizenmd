@@ -101,41 +101,37 @@
     </message>
 </context>
 <context>
-    <name>MdViewTextAreaPage</name>
+    <name>MdViewPage</name>
     <message>
         <source>View html</source>
-        <translation>Zeige html</translation>
+        <translation type="unfinished">Zeige html</translation>
     </message>
     <message>
         <source>Switch to %1</source>
-        <translation>Wechsle zu %1</translation>
+        <translation type="unfinished">Wechsle zu %1</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Bearbeiten</translation>
+        <translation type="unfinished">Bearbeiten</translation>
     </message>
     <message>
-        <source>Cheatsheet</source>
+        <source>CheatSheet</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>MdWebViewPage</name>
+    <name>MdViewPullDown</name>
     <message>
         <source>View html</source>
-        <translation>Zeige html</translation>
+        <translation type="unfinished">Zeige html</translation>
     </message>
     <message>
         <source>Switch to %1</source>
-        <translation>Wechsle zu %1</translation>
+        <translation type="unfinished">Wechsle zu %1</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Bearbeiten</translation>
-    </message>
-    <message>
-        <source>Cheatsheet</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Bearbeiten</translation>
     </message>
 </context>
 <context>

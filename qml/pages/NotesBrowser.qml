@@ -211,12 +211,8 @@ Page {
                         nameFilters: page.nameFilters
                     })
                 } else {
-                    var filePath = fileModel.path + "/" + model.fileName
-                    var pageFile = settings.viewItemIndex == 0 ?
-                                "MdViewTextAreaPage.qml":
-                                "MdWebViewPage.qml"
-                    currentFile.path = filePath
-                    pageStack.push(Qt.resolvedUrl(pageFile))
+                    currentFile.path = fileModel.path + "/" + model.fileName
+                    pageStack.push(Qt.resolvedUrl("MdViewPage.qml"))
                 }
             }
 
