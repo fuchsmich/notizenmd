@@ -21,6 +21,9 @@ Page {
 
     SilicaWebView {
         id: webView
+        property string markdown: ""
+        onMarkdownChanged: {}
+
         anchors.fill: parent
 
         PullDownMenu {
@@ -58,14 +61,14 @@ Page {
         }
 
 
-        signal messageReceived(var message)
+//        signal messageReceived(var message)
 
-        function runJavaScript(script, callback) {
-            return webView.experimental.evaluateJavaScript(script, callback);
-        }
+//        function runJavaScript(script, callback) {
+//            return webView.experimental.evaluateJavaScript(script, callback);
+//        }
 
         experimental.preferences.navigatorQtObjectEnabled: true
-        experimental.onMessageReceived: webView.messageReceived(message)
+        experimental.onMessageReceived: console.log(message.data)
 
         onLoadingChanged: if (loadRequest.status === WebView.LoadSucceededStatus) updateText(page.text)
 

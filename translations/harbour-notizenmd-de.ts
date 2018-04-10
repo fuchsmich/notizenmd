@@ -101,13 +101,6 @@
     </message>
 </context>
 <context>
-    <name>EditNotePage</name>
-    <message>
-        <source>CheatSheet</source>
-        <translation>CheatSheet</translation>
-    </message>
-</context>
-<context>
     <name>MdViewTextAreaPage</name>
     <message>
         <source>View html</source>
@@ -120,6 +113,10 @@
     <message>
         <source>Edit</source>
         <translation>Bearbeiten</translation>
+    </message>
+    <message>
+        <source>Cheatsheet</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -135,6 +132,10 @@
     <message>
         <source>Edit</source>
         <translation>Bearbeiten</translation>
+    </message>
+    <message>
+        <source>Cheatsheet</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

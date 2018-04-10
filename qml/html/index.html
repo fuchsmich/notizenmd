@@ -13,6 +13,7 @@
 
     window.onerror=function(msg, url, linenumber){
         jserror.innerHTML = ('Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber);
+        navigator.qt.postMessage('Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber);
         return true;
     }
     </script>
@@ -23,6 +24,7 @@
 
     var updateText = function(text) {
         placeholder.innerHTML = marked(text);
+        navigator.qt.postMessage('Html published');
     }
     var showHTML = function() {
         codeplaceholder.innerHTML = placeholder.innerHTML.replace(/</g,'&lt;').replace(/>/g,'&gt;');
