@@ -3,8 +3,6 @@ Simple markdown notes for SailfishOS
 
 ## TODO
 
-- [ ] Cheatsheet no edit etc
-- [ ] Move WebView/TextArea into components, switch with states
 - [ ] About.qml (references to other projects)
     - [ ] Reference to other projects
 - [ ] Cover.qml
@@ -15,9 +13,13 @@ Simple markdown notes for SailfishOS
 - [ ] Syntax highlighting in editor
 - [ ] Sync filename with title of note (if present)?
 
+v0.5
+- [x] Cheatsheet no edit etc
+- [x] Move WebView/TextArea into components, switch with states
+
+
 v0.4
 - [x] Attach cheatsheet to EditPage
-
 
 v0.3
 - [x] Start translation
