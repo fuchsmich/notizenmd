@@ -108,15 +108,15 @@
     </message>
     <message>
         <source>View html</source>
-        <translation>Zeige html</translation>
+        <translation type="unfinished">Zeige html</translation>
     </message>
     <message>
         <source>Switch to %1</source>
-        <translation>Wechsle zu %1</translation>
+        <translation type="unfinished">Wechsle zu %1</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Bearbeiten</translation>
+        <translation type="unfinished">Bearbeiten</translation>
     </message>
     <message>
         <source>CheatSheet</source>
@@ -142,11 +142,11 @@
     <name>MdViewTextAreaPage</name>
     <message>
         <source>View html</source>
-        <translation>Zeige html</translation>
+        <translation type="unfinished">Zeige html</translation>
     </message>
     <message>
         <source>Switch to %1</source>
-        <translation>Wechsle zu %1</translation>
+        <translation type="unfinished">Wechsle zu %1</translation>
     </message>
     <message>
         <source>Edit</source>
