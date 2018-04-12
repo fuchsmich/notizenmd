@@ -103,10 +103,6 @@
 <context>
     <name>MdViewPage</name>
     <message>
-        <source>Cheatsheet</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>View html</source>
         <translation type="unfinished"></translation>
     </message>
@@ -116,6 +112,10 @@
     </message>
     <message>
         <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CheatSheet</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -131,25 +131,6 @@
     </message>
     <message>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>MdViewTextAreaPage</name>
-    <message>
-        <source>View html</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Switch to %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Edit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Cheatsheet</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

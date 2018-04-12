@@ -103,24 +103,20 @@
 <context>
     <name>MdViewPage</name>
     <message>
-        <source>Cheatsheet</source>
-        <translation>Schummler</translation>
-    </message>
-    <message>
         <source>View html</source>
-        <translation type="unfinished">Zeige html</translation>
+        <translation>Zeige html</translation>
     </message>
     <message>
         <source>Switch to %1</source>
-        <translation type="unfinished">Wechsle zu %1</translation>
+        <translation>Wechsle zu %1</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation type="unfinished">Bearbeiten</translation>
+        <translation>Bearbeiten</translation>
     </message>
     <message>
         <source>CheatSheet</source>
-        <translation type="unfinished"></translation>
+        <translation>Schummler</translation>
     </message>
 </context>
 <context>
@@ -136,25 +132,6 @@
     <message>
         <source>Edit</source>
         <translation>Bearbeiten</translation>
-    </message>
-</context>
-<context>
-    <name>MdViewTextAreaPage</name>
-    <message>
-        <source>View html</source>
-        <translation type="unfinished">Zeige html</translation>
-    </message>
-    <message>
-        <source>Switch to %1</source>
-        <translation type="unfinished">Wechsle zu %1</translation>
-    </message>
-    <message>
-        <source>Edit</source>
-        <translation>Bearbeiten</translation>
-    </message>
-    <message>
-        <source>Cheatsheet</source>
-        <translation>Schummler</translation>
     </message>
 </context>
 <context>
