@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de_AT" sourcelanguage="en">
+<TS version="2.1" language="fr">
 <context>
     <name></name>
     <message id="filemanager-la-folder_no_permission_to_access">
@@ -93,33 +93,29 @@
     <name>DirectoryPickerPage</name>
     <message>
         <source>Pick (%1)</source>
-        <translation>(%1) auswählen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Pick Folder</source>
-        <translation>Ordner auswählen</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>MdViewPage</name>
     <message>
         <source>Cheatsheet</source>
-        <translation>Schummler</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>View html</source>
-        <translation>Zeige html</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Switch to %1</source>
-        <translation>Wechsle zu %1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Bearbeiten</translation>
-    </message>
-    <message>
-        <source>CheatSheet</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -127,98 +123,98 @@
     <name>MdViewPullDown</name>
     <message>
         <source>View html</source>
-        <translation>Zeige html</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Switch to %1</source>
-        <translation>Wechsle zu %1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Bearbeiten</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>MdViewTextAreaPage</name>
     <message>
         <source>View html</source>
-        <translation>Zeige html</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Switch to %1</source>
-        <translation>Wechsle zu %1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Bearbeiten</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Cheatsheet</source>
-        <translation>Schummler</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>NewNoteDialog</name>
     <message>
         <source>New note</source>
-        <translation>Neue Notiz</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Auto-add extension (.md)</source>
-        <translation>Erweiterung (.md) automatisch anhängen.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Edit note after creation.</source>
-        <translation>Notiz nach erstellen bearbeiten.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>NotesBrowser</name>
     <message>
         <source>Settings</source>
-        <translation>Einstellungen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>New Note</source>
-        <translation>Neue Notiz</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Settings</name>
     <message>
         <source>About</source>
-        <translation>Über</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation>Einstellungen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Files</source>
-        <translation>Dateien</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Path to folder containing notes</source>
-        <translation>Pfad zum Ordner, der Notizen enthält</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Choose Folder</source>
-        <translation>Ordner auswählen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>File filters separated by comma</source>
-        <translation>Dateifilter durch Beistrich getrennt</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Select WebView (md by marked.js) or TextArea (md by mistune.py) for viewing notes.</source>
-        <translation>WebView (md mit marked.js) oder TextArea (md mit mistune.py) zum Anzeigen der Notizen auswählen.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>harbour-notizenmd</name>
     <message>
         <source>Notes</source>
-        <translation>Notizen</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
