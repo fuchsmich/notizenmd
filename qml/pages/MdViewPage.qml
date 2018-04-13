@@ -31,8 +31,8 @@ Page {
         id: pullDownComp
         PullDownMenu {
             MenuItem {
-                text: qsTr("View html")
-                onClicked: textArea.toggleRT()
+                text: qsTr("Toggle html/text")
+                onClicked: viewLoader.item.toggleHtmlText()
             }
             MenuItem {
                 text: qsTr("Switch to %1").arg((viewMode === 0 ? "WebView" : "TextArea"))

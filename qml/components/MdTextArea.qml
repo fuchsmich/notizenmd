@@ -13,9 +13,13 @@ SilicaFlickable {
     }
     property string title: ""
     property string description: ""
+    function toggleHtmlText() {
+        textArea.toggleHtmlText()
+    }
 
     Column {
         id:col
+
         width: parent.width
 
         PageHeader {
@@ -33,8 +37,8 @@ SilicaFlickable {
             Component.onCompleted: {
                 _editor.textFormat = TextEdit.RichText
             }
-            function showHTML() {
-                _editor.textFormat = ( _editor.textFormat == TextEdit.RichText ?
+            function toggleHtmlText() {
+                textArea._editor.textFormat = ( _editor.textFormat == TextEdit.RichText ?
                                           TextEdit.PlainText :
                                           TextEdit.RichText)
             }

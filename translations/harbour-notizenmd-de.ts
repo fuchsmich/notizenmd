@@ -120,21 +120,6 @@
     </message>
 </context>
 <context>
-    <name>MdViewPullDown</name>
-    <message>
-        <source>View html</source>
-        <translation>Zeige html</translation>
-    </message>
-    <message>
-        <source>Switch to %1</source>
-        <translation>Wechsle zu %1</translation>
-    </message>
-    <message>
-        <source>Edit</source>
-        <translation>Bearbeiten</translation>
-    </message>
-</context>
-<context>
     <name>NewNoteDialog</name>
     <message>
         <source>New note</source>

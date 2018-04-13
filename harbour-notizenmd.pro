@@ -32,7 +32,6 @@ DISTFILES += qml/harbour-notizenmd.qml \
     qml/components/Mistune.qml \
     qml/pages/MdViewPage.qml \
     qml/components/MdTextArea.qml \
-    qml/components/MdViewPullDown.qml \
     qml/components/MdWebView.qml
 
 

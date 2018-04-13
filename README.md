@@ -3,6 +3,7 @@ Simple markdown notes for SailfishOS
 
 ## TODO
 
+- [ ] export html
 - [ ] About.qml (references to other projects)
     - [ ] Reference to other projects
 - [ ] Cover.qml

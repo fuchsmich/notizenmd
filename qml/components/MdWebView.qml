@@ -6,10 +6,21 @@ SilicaWebView {
     id: webView
     property string markdown: ""
     onMarkdownChanged: {
-        updateText(markdown)
+        updateText()
     }
     property string title: ""
     property string description: ""
+    property int textFormat: TextEdit.RichText
+    onTextFormatChanged: {
+        updateText()
+    }
+
+    function toggleHtmlText() {
+        textFormat = ( textFormat === TextEdit.RichText ?
+                                  TextEdit.PlainText :
+                                  TextEdit.RichText)
+    }
+
     header: PageHeader {
         title: webView.title
         description: webView.description
@@ -17,14 +28,9 @@ SilicaWebView {
 
     url: Qt.resolvedUrl("../html/index.html")
 
-    function updateText(text) {
-        var script = 'updateText(' + JSON.stringify(text) + ')';
-        //console.log(script);
-        webView.experimental.evaluateJavaScript(script , function(){})
-    }
-    function showHTML(text) {
-        var script = 'showHTML()';
-        //console.log(script);
+    function updateText() {
+        var script = 'updateText(' + JSON.stringify(markdown) + ',' + textFormat + ')';
+        console.log(textFormat);
         webView.experimental.evaluateJavaScript(script , function(){})
     }
 

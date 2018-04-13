@@ -22,13 +22,15 @@
     var placeholder = document.getElementById('placeholder');
     var codeplaceholder = document.getElementById('codeplaceholder');
 
-    var updateText = function(text) {
-        placeholder.innerHTML = marked(text);
+    var updateText = function(text, format) {
+        if (format === 1) {
+            codeplaceholder.innerHTML = '';
+            placeholder.innerHTML = marked(text);
+        } else if (format === 0) {
+            placeholder.innerHTML = '';
+            codeplaceholder.innerHTML = marked(text).replace(/</g,'&lt;').replace(/>/g,'&gt;');
+        }
         navigator.qt.postMessage('Html published');
-    }
-    var showHTML = function() {
-        codeplaceholder.innerHTML = placeholder.innerHTML.replace(/</g,'&lt;').replace(/>/g,'&gt;');
-        placeholder.innerHTML = '';
     }
     </script>
 </body>
