@@ -103,10 +103,6 @@
 <context>
     <name>MdViewPage</name>
     <message>
-        <source>View html</source>
-        <translation>Zeige html</translation>
-    </message>
-    <message>
         <source>Switch to %1</source>
         <translation>Wechsle zu %1</translation>
     </message>
@@ -117,6 +113,10 @@
     <message>
         <source>CheatSheet</source>
         <translation>Schummler</translation>
+    </message>
+    <message>
+        <source>Toggle html/text</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

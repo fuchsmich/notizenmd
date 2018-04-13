@@ -8,6 +8,13 @@ CoverBackground {
         text: "Notizen.md"
     }
 
+//    Image {
+//        anchors.centerIn: parent
+//        width: parent.width/2
+//        height: width
+//        source: Qt.resolvedUrl("./harbour-notizenmd.svg")
+//    }
+
 //    CoverActionList {
 //        id: coverAction
 
