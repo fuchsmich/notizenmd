@@ -2,10 +2,6 @@
 Simple markdown notes for SailfishOS
 
 ## TODO
-
-- [ ] export html
-- [ ] About.qml (references to other projects)
-    - [ ] Reference to other projects
 - [ ] Cover.qml
 - [ ] TOC?
 - [ ] Handle links (external/internal)
@@ -15,7 +11,9 @@ Simple markdown notes for SailfishOS
 - [ ] Sync filename with title of note (if present)?
 
 v0.6
-
+- [x] About.qml (references to other projects)
+    - [x] Reference to other projects
+- [x] fix toggle html
 
 v0.5
 - [x] Cheatsheet no edit etc
