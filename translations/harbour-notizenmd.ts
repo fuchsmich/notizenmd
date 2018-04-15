@@ -90,6 +90,21 @@
     </message>
 </context>
 <context>
+    <name>About</name>
+    <message>
+        <source>About %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DirectoryPickerPage</name>
     <message>
         <source>Pick (%1)</source>
@@ -103,19 +118,11 @@
 <context>
     <name>MdViewPage</name>
     <message>
-        <source>Switch to %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Edit</source>
+        <source>Toggle html/text</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>CheatSheet</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Toggle html/text</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -142,6 +149,10 @@
     </message>
     <message>
         <source>New Note</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>About %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

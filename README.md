@@ -14,6 +14,9 @@ Simple markdown notes for SailfishOS
 - [ ] Syntax highlighting in editor
 - [ ] Sync filename with title of note (if present)?
 
+v0.6
+
+
 v0.5
 - [x] Cheatsheet no edit etc
 - [x] Move WebView/TextArea into components, switch with states

@@ -72,6 +72,11 @@ Page {
         PullDownMenu {
 
             MenuItem {
+                visible: homePath == path
+                text: qsTr("About %1").arg("Notizen.md")
+                onClicked: pageStack.push(Qt.resolvedUrl("About.qml"))
+            }
+            MenuItem {
                 //% "Sort"
                 text: qsTrId("filemanager-me-sort")
                 visible: fileModel.count > 0
