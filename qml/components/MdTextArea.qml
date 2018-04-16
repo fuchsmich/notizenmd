@@ -13,6 +13,8 @@ SilicaFlickable {
     }
     property string title: ""
     property string description: ""
+    signal linkActivated(string link)
+
     function toggleHtmlText() {
         textArea.toggleHtmlText()
     }
@@ -27,18 +29,19 @@ SilicaFlickable {
             description: flick.description
         }
 
-        TextArea {
+        Label {
             //http://doc.qt.io/qt-5/qtextdocument.html#defaultStyleSheet-prop
             id: textArea
-            width: parent.width
+            x: Theme.horizontalPageMargin
+            width: parent.width - 2*x
 
-            readOnly: true
+            //readOnly: true
             wrapMode: TextEdit.Wrap
-            Component.onCompleted: {
-                _editor.textFormat = TextEdit.RichText
-            }
+            textFormat: TextEdit.RichText
+            onLinkActivated: flick.linkActivated(link)
+
             function toggleHtmlText() {
-                textArea._editor.textFormat = ( _editor.textFormat == TextEdit.RichText ?
+                textFormat = (textFormat == TextEdit.RichText ?
                                           TextEdit.PlainText :
                                           TextEdit.RichText)
             }

@@ -24,7 +24,10 @@ Page {
                 width: parent.width
                 text: currentFile.content
                 onTextChanged: if (loaded) autosaveTimer.restart()
-                Component.onCompleted: loaded = true;
+                Component.onCompleted: {
+                    loaded = true;
+                    _editor.editingFinished.connect(function(){console.log("fertich!")}) //just a test -> geht
+                }
             }
             Timer {
                 id: autosaveTimer

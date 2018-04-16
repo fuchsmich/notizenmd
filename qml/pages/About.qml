@@ -34,6 +34,10 @@ Page {
                 text: 'Markdown rendering by '+
                       '<a href="https://github.com/markedjs/marked">marked.js</a> and ' +
                       '<a href="https://github.com/lepture/mistune">mistune.py</a>.'
+                onLinkActivated: {
+                    console.log("opening " + link)
+                    Qt.openUrlExternally(link)
+                }
             }
         }
     }

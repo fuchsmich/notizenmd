@@ -4,15 +4,14 @@ Simple markdown notes for SailfishOS
 ## TODO
 - [ ] Cover.qml
 - [ ] TOC?
-- [ ] Handle links (external/internal)
 - [ ] Example files for demo
 - [ ] Custom css?
 - [ ] Syntax highlighting in editor
 - [ ] Sync filename with title of note (if present)?
 
 v0.6
+- [x] Basic linkhandling (external/internal)
 - [x] About.qml (references to other projects)
-    - [x] Reference to other projects
 - [x] fix toggle html
 
 v0.5

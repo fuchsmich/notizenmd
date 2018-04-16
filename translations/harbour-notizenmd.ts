@@ -103,6 +103,10 @@
         <source>Source</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Other Projects</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DirectoryPickerPage</name>
@@ -123,6 +127,14 @@
     </message>
     <message>
         <source>CheatSheet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch to %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

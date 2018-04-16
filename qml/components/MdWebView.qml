@@ -15,6 +15,8 @@ SilicaWebView {
         updateText()
     }
 
+    signal linkActivated(string link)
+
     function toggleHtmlText() {
         textFormat = ( textFormat === TextEdit.RichText ?
                                   TextEdit.PlainText :
@@ -32,6 +34,11 @@ SilicaWebView {
         var script = 'updateText(' + JSON.stringify(markdown) + ',' + textFormat + ')';
         console.log(textFormat);
         webView.experimental.evaluateJavaScript(script , function(){})
+    }
+    onNavigationRequested: {
+        if (request.url !== webView.url)
+            request.action = WebView.IgnoreRequest;
+            linkActivated(request.url);
     }
 
     experimental.preferences.navigatorQtObjectEnabled: true

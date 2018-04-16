@@ -12,6 +12,21 @@ Page {
     property int viewMode: settings.viewItemIndex
     property bool viewCheatSheet: false
 
+    function handleLink(link) {
+        // detect URL scheme prefix, most likely an external link
+        var schemaRE = /^\w+:/;
+        if (schemaRE.test(link)) {
+            console.log("external", link);
+            Qt.openUrlExternally(link)
+        } else {
+            console.log("internal", link);
+            var cf = currentFile.path
+            var folderName = cf.substring(0, cf.lastIndexOf("/")+1)
+            console.log(folderName + link);
+            currentFile.path = folderName + link;
+        }
+    }
+
     Loader {
         id: viewLoader
         anchors.fill: parent
@@ -21,6 +36,7 @@ Page {
             if (!viewCheatSheet) {
                 item.pullDownMenu = pullDownComp.createObject(item);
                 item.markdown = Qt.binding(function(){ return currentFile.content });
+                item.linkActivated.connect(handleLink)
             } else {
                 loadCheatsheet();
             }
