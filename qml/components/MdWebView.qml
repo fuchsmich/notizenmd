@@ -36,9 +36,10 @@ SilicaWebView {
         webView.experimental.evaluateJavaScript(script , function(){})
     }
     onNavigationRequested: {
-        if (request.url !== webView.url)
+        if (request.url !== webView.url) {
             request.action = WebView.IgnoreRequest;
             linkActivated(request.url);
+        }
     }
 
     experimental.preferences.navigatorQtObjectEnabled: true
