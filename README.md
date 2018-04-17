@@ -2,6 +2,7 @@
 Simple markdown notes for SailfishOS
 
 ## TODO
+- [ ] Custom cheatsheet
 - [ ] Cover.qml
 - [ ] TOC?
 - [ ] Example files for demo
