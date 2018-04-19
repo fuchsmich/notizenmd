@@ -2,6 +2,7 @@
 Simple markdown notes for SailfishOS
 
 ## TODO
+- [ ] Transifex Project + invaitaions
 - [ ] Custom cheatsheet
 - [ ] Cover.qml
 - [ ] TOC?
