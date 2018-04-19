@@ -38,7 +38,12 @@ SilicaFlickable {
             //readOnly: true
             wrapMode: TextEdit.Wrap
             textFormat: TextEdit.RichText
-            onLinkActivated: flick.linkActivated(link)
+            baseUrl: "http://this.is.a/test/"
+            onLinkActivated: {
+                console.log(link);
+                flick.linkActivated(link);
+            }
+
 
             function toggleHtmlText() {
                 textFormat = (textFormat == TextEdit.RichText ?
