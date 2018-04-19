@@ -10,6 +10,9 @@ Simple markdown notes for SailfishOS
 - [ ] Syntax highlighting in editor
 - [ ] Sync filename with title of note (if present)?
 
+v0.6.1
+- [ ] fixed issue opening index.html in browser.
+
 v0.6
 - [x] Basic linkhandling (external/internal)
 - [x] About.qml (references to other projects)
