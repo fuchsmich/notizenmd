@@ -38,10 +38,10 @@ SilicaFlickable {
             //readOnly: true
             wrapMode: TextEdit.Wrap
             textFormat: TextEdit.RichText
-            baseUrl: "http://this.is.a/test/"
+            baseUrl: currentFile.folder
             onLinkActivated: {
                 console.log(link);
-                flick.linkActivated(link);
+                flick.linkActivated(Qt.resolvedUrl(baseUrl + link));
             }
 
 

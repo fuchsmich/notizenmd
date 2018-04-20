@@ -31,8 +31,9 @@ SilicaWebView {
     url: Qt.resolvedUrl("../html/index.html")
 
     function updateText() {
-        var script = 'updateText(' + JSON.stringify(markdown) + ',' + textFormat + ')';
-        console.log(textFormat);
+        var script = 'setBaseUrl("' + currentFile.folder + '")';
+        webView.experimental.evaluateJavaScript(script , function(){})
+        script = 'updateText(' + JSON.stringify(markdown) + ',' + textFormat + ')';
         webView.experimental.evaluateJavaScript(script , function(){})
     }
     onNavigationRequested: {

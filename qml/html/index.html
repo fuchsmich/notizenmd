@@ -2,7 +2,7 @@
 <html lang="en">
 <meta charset="utf-8">
 <head>
-  <base href="notizenmd://">
+  <base href="">
   <link rel="stylesheet" type="text/css" href="file:///usr/share/harbour-notizenmd/qml/html/github.css">
 </head>
 <body>
@@ -16,6 +16,10 @@
         jserror.innerHTML = ('Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber);
         navigator.qt.postMessage('Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber);
         return true;
+    }
+
+    var setBaseUrl = function(url) {
+        document.getElementsByTagName("base")[0].setAttribute("href", url);
     }
     </script>
     <script src="file:///usr/share/harbour-notizenmd/qml/html/marked/marked.min.js"></script>
