@@ -2,7 +2,8 @@
 Simple markdown notes for SailfishOS
 
 ## TODO
-- [ ] Transifex Project + invaitaions
+- [ ] improve link handling
+- [ ] Transifex Project + invitations
 - [ ] Custom cheatsheet
 - [ ] Cover.qml
 - [ ] TOC?
