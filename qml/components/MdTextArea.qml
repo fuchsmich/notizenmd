@@ -37,6 +37,7 @@ SilicaFlickable {
 
             //readOnly: true
             wrapMode: TextEdit.Wrap
+            horizontalAlignment: settings.horAlign
             textFormat: TextEdit.RichText
             onLinkActivated: flick.linkActivated(link)
 

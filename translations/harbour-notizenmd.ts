@@ -198,6 +198,26 @@
         <source>Select WebView (md by marked.js) or TextArea (md by mistune.py) for viewing notes.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Horizontal alignment in TextArea</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Justify</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>harbour-notizenmd</name>

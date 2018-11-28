@@ -83,13 +83,32 @@ Page {
                 id: viewItemSelector
                 width: parent.width
                 currentIndex: settings.viewItemIndex
-                label: qsTr("Select WebView (md by marked.js) or TextArea (md by mistune.py) for viewing notes.")
+                //label:
+                description: qsTr("Select WebView (md by marked.js) or TextArea (md by mistune.py) for viewing notes.")
                 menu: ContextMenu {
                     MenuItem { text:"TextArea (mistune.py)"
                         onClicked: settings.viewItemIndex = 0 }
                     MenuItem { text:"WebView (marked.js)"
                         onClicked: settings.viewItemIndex = 1 }
                 }
+            }
+
+            ComboBox {
+                id: horAlignSelector
+                width: parent.width
+                currentIndex: values.indexOf(settings.horAlign)
+                label: qsTr("Horizontal alignment in TextArea")
+                property var values: [Text.AlignLeft, Text.AlignJustify, Text.AlignRight, Text.AlignHCenter]
+                property var texts: [qsTr("Left"), qsTr("Justify"), qsTr("Right"), qsTr("Center")]
+
+                menu: ContextMenu {
+                    Repeater {
+                        model: horAlignSelector.values
+                        MenuItem { text: horAlignSelector.texts[model.index]
+                            onClicked: settings.horAlign = horAlignSelector.values[model.index] }
+                    }
+                }
+                onCurrentIndexChanged: console.log(currentIndex, currentItem)
             }
         }
     }

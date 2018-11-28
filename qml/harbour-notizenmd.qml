@@ -32,6 +32,7 @@ ApplicationWindow
         property int viewItemIndex: 0 //0: TextArea; 1: WebView
         property bool addExtensionOnCreate: false
         property bool editNoteOnCreate: false
+        property int horAlign: Text.AlignLeft
     }
 
     FileIO {
