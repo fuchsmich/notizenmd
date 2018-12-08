@@ -1,19 +1,8 @@
 # notizenmd
 Simple markdown notes for SailfishOS
 
-## TODO
-- [ ] improve link handling
-- [ ] Transifex Project + invitations
-- [ ] Custom cheatsheet
-- [ ] Cover.qml
-- [ ] TOC?
-- [ ] Example files for demo
-- [ ] Custom css?
-- [ ] Syntax highlighting in editor
-- [ ] Sync filename with title of note (if present)?
-
 v0.6.1
-- [ ] fixed issue opening index.html in browser.
+- [x] fixed issue opening index.html in browser.
 
 v0.6
 - [x] Basic linkhandling (external/internal)
