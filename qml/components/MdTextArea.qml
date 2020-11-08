@@ -29,7 +29,7 @@ SilicaFlickable {
             description: flick.description
         }
 
-        Label {
+        LinkedLabel {
             //http://doc.qt.io/qt-5/qtextdocument.html#defaultStyleSheet-prop
             id: textArea
             x: Theme.horizontalPageMargin
