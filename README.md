@@ -1,6 +1,31 @@
 # notizenmd
 Simple markdown notes for SailfishOS
 
+## Source
+
+https://github.com/fuchsmich/notizenmd
+
+## Translation 
+
+https://www.transifex.com/none-496/notizenmd/dashboard/
+
+
+## Installation
+
+Download the rpm from [openrepos](https://openrepos.net/content/fooxl/notizenmd) or [releases](https://github.com/fuchsmich/notizenmd/releases/latest).
+
+
+## TODO
+- [ ] improve link handling
+- [ ] Custom cheatsheet
+- [ ] Cover.qml
+- [ ] TOC?
+- [ ] Example files for demo
+- [ ] Custom css?
+- [ ] Syntax highlighting in editor
+- [ ] Sync filename with title of note (if present)?
+- [x] Transifex Project + invitations
+
 v0.6.1
 - [x] fixed issue opening index.html in browser.
 
