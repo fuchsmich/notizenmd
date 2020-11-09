@@ -8,7 +8,6 @@ import "components"
 ApplicationWindow
 {
     id: app
-    //initialPage: Component { FirstPage { } }
     initialPage: Component{
         NotesBrowser {
             homePath: settings.notesLocation
