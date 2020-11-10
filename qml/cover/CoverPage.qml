@@ -2,28 +2,37 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 CoverBackground {
-    Label {
-        id: label
+    id: cover
+    Image {
+        source: "coversmall.png"
         anchors.centerIn: parent
-        text: "Notizen.md"
+        opacity: 0.2
+        anchors.fill: parent
+        fillMode: Image.PreserveAspectFit
     }
 
-//    Image {
-//        anchors.centerIn: parent
-//        width: parent.width/2
-//        height: width
-//        source: Qt.resolvedUrl("./harbour-notizenmd.svg")
-//    }
+    SilicaListView {
+        anchors.fill: parent
+        anchors.margins: Theme.paddingMedium
+        clip: true
+        model: visualModel.parts.cover
+    }
 
-//    CoverActionList {
-//        id: coverAction
+    CoverActionList {
+        CoverAction {
+            iconSource: "image://theme/icon-cover-new"
+            onTriggered: {
+                app.addTask()
+            }
+        }
+    }
+    states: [
+        State {
+            name: "folder"
+            PropertyChanges {
+                target: cover
 
-//        CoverAction {
-//            iconSource: "image://theme/icon-cover-next"
-//        }
-
-//        CoverAction {
-//            iconSource: "image://theme/icon-cover-pause"
-//        }
-//    }
+            }
+        }
+    ]
 }
