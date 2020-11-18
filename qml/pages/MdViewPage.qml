@@ -27,21 +27,25 @@ Page {
         }
     }
 
-    Loader {
-        id: viewLoader
+    MdGeckoView {
         anchors.fill: parent
-        onLoaded: {
-            item.title = page.title;
-            item.description = page.description;
-            if (!viewCheatSheet) {
-                item.pullDownMenu = pullDownComp.createObject(item);
-                item.markdown = Qt.binding(function(){ return currentFile.content });
-                item.linkActivated.connect(handleLink)
-            } else {
-                loadCheatsheet();
-            }
-        }
     }
+
+//    Loader {
+//        id: viewLoader
+//        anchors.fill: parent
+//        onLoaded: {
+//            item.title = page.title;
+//            item.description = page.description;
+//            if (!viewCheatSheet) {
+//                item.pullDownMenu = pullDownComp.createObject(item);
+//                item.markdown = Qt.binding(function(){ return currentFile.content });
+//                item.linkActivated.connect(handleLink)
+//            } else {
+//                loadCheatsheet();
+//            }
+//        }
+//    }
 
     Component {
         id: pullDownComp
@@ -93,7 +97,7 @@ Page {
             when: viewMode === 1
             PropertyChanges {
                 target: viewLoader
-                source: Qt.resolvedUrl("../components/MdWebView.qml")
+                source: Qt.resolvedUrl("../components/MdGeckoView.qml")
             }
         }
     ]
