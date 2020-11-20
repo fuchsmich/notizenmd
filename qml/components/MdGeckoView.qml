@@ -7,42 +7,49 @@ WebViewFlickable {
     id: wv
     property string markdown: ""
     onMarkdownChanged: {
-        updateText()
+        //updateText()
     }
     property string title: ""
     property string description: ""
-//    property int textFormat: TextEdit.RichText
-//    onTextFormatChanged: {
-//        updateText()
-//    }
+    property int textFormat: TextEdit.RichText
+    onTextFormatChanged: {
+        //updateText()
+    }
+
+    function toggleHtmlText() {
+        textFormat = ( textFormat === TextEdit.RichText ?
+                                  TextEdit.PlainText :
+                                  TextEdit.RichText)
+    }
 
     signal linkActivated(string link)
-
-//    function toggleHtmlText() {
-//        textFormat = ( textFormat === TextEdit.RichText ?
-//                                  TextEdit.PlainText :
-//                                  TextEdit.RichText)
-//    }
 
     header: PageHeader {
         title: wv.title
         description: wv.description
     }
 
-//    webView.url: Qt.resolvedUrl("../html/index.html")
+    Connections {
+        target: wv.webView
+        function onLinkActivated(link){ wv.linkActivated(link) }
+    }
 
-//    function updateText() {
+    function updateText() {
 //        var script = 'setBaseUrl("' + currentFile.folder + '")';
 //        wv.experimental.evaluateJavaScript(script , function(){})
-//        script = 'updateText(' + JSON.stringify(markdown) + ',' + textFormat + ')';
+        var script = 'data:,updateText(%1, %2)'.arg(JSON.stringify(wv.markdown)).arg(wv.textFormat)
+        webView.loadFrameScript(script, true)
 //        wv.experimental.evaluateJavaScript(script , function(){})
-//    }
-//    onNavigationRequested: {
-//        if (request.url !== wv.url) {
-//            request.action = wv.IgnoreRequest;
-//            linkActivated(request.url);
-//        }
-//    }
+    }
+
+    webView {
+        url: Qt.resolvedUrl("../html/index.html")
+
+        //onViewInitialized: updateText()
+
+        onRecvAsyncMessage: console.log(JSON.stringify(data))
+
+    }
 
 //    experimental.preferences.navigatorQtObjectEnabled: true
 //    experimental.onMessageReceived: console.log(message.data)

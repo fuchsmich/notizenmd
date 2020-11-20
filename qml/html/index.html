@@ -6,15 +6,15 @@
   <link rel="stylesheet" type="text/css" href="file:///usr/share/harbour-notizenmd/qml/html/github.css">
 </head>
 <body>
-  <div id="placeholder"></div>
-  <code id="codeplaceholder" style="white-space: pre-wrap;"></code>
+  <div id="placeholder">geh her do</div>
+  <code id="codeplaceholder" style="white-space: pre-wrap;">sowos</code>
   <div id="jserror"></div>
     <script>
     var jserror = document.getElementById('jserror');
 
-    window.onerror=function(msg, url, linenumber){
+    window.onerror = function(msg, url, linenumber){
         jserror.innerHTML = ('Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber);
-        navigator.qt.postMessage('Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber);
+        //navigator.qt.postMessage('Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber);
         return true;
     }
 
@@ -35,7 +35,7 @@
             placeholder.innerHTML = '';
             codeplaceholder.innerHTML = marked(text).replace(/</g,'&lt;').replace(/>/g,'&gt;');
         }
-        navigator.qt.postMessage('Html published');
+        //navigator.qt.postMessage('Html published');
     }
     </script>
 </body>
