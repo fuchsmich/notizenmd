@@ -6,8 +6,8 @@ import Sailfish.WebView 1.0
 WebViewFlickable {
     id: wv
 
-    property string markdown: ""
-    onMarkdownChanged: {
+    property string markDown: ""
+    onMarkDownChanged: {
         updateText()
     }
     property string title: ""
@@ -36,7 +36,7 @@ WebViewFlickable {
     function updateText() {
         if (contentReady) {
             webView.sendAsyncMessage("NotizenMd:UpdateText", {
-                                         "markdown": wv.markdown,
+                                         "markDown": wv.markDown,
                                          "textFormat": wv.textFormat
                                      })
         }

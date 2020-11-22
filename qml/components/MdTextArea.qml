@@ -5,9 +5,9 @@ SilicaFlickable {
     id: flick
     contentHeight: col.height + Theme.paddingLarge
     contentWidth: col.width
-    property string markdown: ""
-    onMarkdownChanged: {
-        mistune.call('mistune.markdown', [markdown], function(html){
+    property string markDown: ""
+    onMarkDownChanged: {
+        mistune.call('mistune.markdown', [markDown], function(html){
             textArea.text = html;
         })
     }

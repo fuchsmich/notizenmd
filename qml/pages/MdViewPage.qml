@@ -27,10 +27,6 @@ Page {
         }
     }
 
-//    MdGeckoView {
-//        anchors.fill: parent
-//    }
-
     Loader {
         id: viewLoader
         anchors.fill: parent
@@ -39,7 +35,7 @@ Page {
             item.description = page.description;
             if (!viewCheatSheet) {
                 item.pullDownMenu = pullDownComp.createObject(item);
-                item.markdown = Qt.binding(function(){ return currentFile.content });
+                item.markDown = Qt.binding(function(){ return currentFile.content });
                 item.linkActivated.connect(handleLink)
             } else {
                 loadCheatsheet();

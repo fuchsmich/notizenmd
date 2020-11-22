@@ -26,7 +26,14 @@ addEventListener("DOMContentLoaded", function () {
 })
 
 addMessageListener("NotizenMd:UpdateText", function(message){
-    dump(marked(message.data.markdown));
     var placeholder = content.document.getElementById('placeholder');
-    placeholder.innerHTML = marked(message.data.markdown);
+    var codeplaceholder = content.document.getElementById('codeplaceholder');
+
+    if (message.data.textFormat === 1) {
+        codeplaceholder.innerHTML = '';
+        placeholder.innerHTML = marked(message.data.markDown);
+    } else if (message.data.textFormat === 0) {
+        placeholder.innerHTML = '';
+        codeplaceholder.innerHTML = marked(message.data.markDown).replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
 });
