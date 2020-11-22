@@ -1,26 +1,30 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-//import Sailfish.Engine 1.0
+import Sailfish.WebEngine 1.0
 import Sailfish.WebView 1.0
 
 WebViewFlickable {
     id: wv
+
     property string markdown: ""
     onMarkdownChanged: {
-        //updateText()
+        updateText()
     }
     property string title: ""
     property string description: ""
     property int textFormat: TextEdit.RichText
     onTextFormatChanged: {
-        //updateText()
+        updateText()
     }
 
     function toggleHtmlText() {
-        textFormat = ( textFormat === TextEdit.RichText ?
+        textFormat = (textFormat === TextEdit.RichText ?
                                   TextEdit.PlainText :
                                   TextEdit.RichText)
     }
+
+    property bool contentReady: false
+    onContentReadyChanged: updateText()
 
     signal linkActivated(string link)
 
@@ -29,30 +33,28 @@ WebViewFlickable {
         description: wv.description
     }
 
-    Connections {
-        target: wv.webView
-        function onLinkActivated(link){ wv.linkActivated(link) }
-    }
-
     function updateText() {
-//        var script = 'setBaseUrl("' + currentFile.folder + '")';
-//        wv.experimental.evaluateJavaScript(script , function(){})
-        var script = 'data:,updateText(%1, %2)'.arg(JSON.stringify(wv.markdown)).arg(wv.textFormat)
-        webView.loadFrameScript(script, true)
-//        wv.experimental.evaluateJavaScript(script , function(){})
+        if (contentReady) {
+            webView.sendAsyncMessage("NotizenMd:UpdateText", {
+                                         "markdown": wv.markdown,
+                                         "textFormat": wv.textFormat
+                                     })
+        }
     }
 
     webView {
         url: Qt.resolvedUrl("../html/index.html")
 
-        //onViewInitialized: updateText()
+        onViewInitialized: {
+            webView.loadFrameScript(Qt.resolvedUrl("../html/marked/marked.min.js"))
+            webView.loadFrameScript(Qt.resolvedUrl("../html/utils.js"))
+            console.log("webView initialized")
+        }
 
-        onRecvAsyncMessage: console.log(JSON.stringify(data))
+        onRecvAsyncMessage: console.log(message, JSON.stringify(data))
 
+        onFirstPaint: {
+            contentReady = true
+        }
     }
-
-//    experimental.preferences.navigatorQtObjectEnabled: true
-//    experimental.onMessageReceived: console.log(message.data)
-
-//    onLoadingChanged: if (loadRequest.status === wv.LoadSucceededStatus) updateText(markdown)
 }

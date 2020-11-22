@@ -2,14 +2,10 @@
 <html lang="en">
 <meta charset="utf-8">
 <head>
-  <base href="">
   <link rel="stylesheet" type="text/css" href="file:///usr/share/harbour-notizenmd/qml/html/github.css">
 </head>
-<body>
-  <div id="placeholder">geh her do</div>
-  <code id="codeplaceholder" style="white-space: pre-wrap;">sowos</code>
-  <div id="jserror"></div>
-    <script>
+<script src="file:///usr/share/harbour-notizenmd/qml/html/marked/marked.min.js"></script>
+<script>
     var jserror = document.getElementById('jserror');
 
     window.onerror = function(msg, url, linenumber){
@@ -21,9 +17,6 @@
     var setBaseUrl = function(url) {
         document.getElementsByTagName("base")[0].setAttribute("href", url);
     }
-    </script>
-    <script src="file:///usr/share/harbour-notizenmd/qml/html/marked/marked.min.js"></script>
-    <script>
     var placeholder = document.getElementById('placeholder');
     var codeplaceholder = document.getElementById('codeplaceholder');
 
@@ -37,7 +30,12 @@
         }
         //navigator.qt.postMessage('Html published');
     }
-    </script>
+
+</script>
+<body>
+  <div id="placeholder">geh her do</div>
+  <code id="codeplaceholder" style="white-space: pre-wrap;">sowos</code>
+  <div id="jserror"></div>
 </body>
 </html>
 

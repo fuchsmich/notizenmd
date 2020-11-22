@@ -13,6 +13,7 @@ SOURCES += \
 DISTFILES += qml/harbour-notizenmd.qml \
     qml/cover/CoverPage.qml \
     qml/html/* \
+    qml/html/utils.js \
     qml/python/* \
     rpm/harbour-notizenmd.changes.in \
     rpm/harbour-notizenmd.changes.run.in \
