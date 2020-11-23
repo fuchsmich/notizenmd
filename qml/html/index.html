@@ -1,41 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html>
 <meta charset="utf-8">
 <head>
   <link rel="stylesheet" type="text/css" href="file:///usr/share/harbour-notizenmd/qml/html/github.css">
 </head>
-<script src="file:///usr/share/harbour-notizenmd/qml/html/marked/marked.min.js"></script>
-<script>
-    var jserror = document.getElementById('jserror');
-
-    window.onerror = function(msg, url, linenumber){
-        jserror.innerHTML = ('Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber);
-        //navigator.qt.postMessage('Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber);
-        return true;
-    }
-
-    var setBaseUrl = function(url) {
-        document.getElementsByTagName("base")[0].setAttribute("href", url);
-    }
-    var placeholder = document.getElementById('placeholder');
-    var codeplaceholder = document.getElementById('codeplaceholder');
-
-    var updateText = function(text, format) {
-        if (format === 1) {
-            codeplaceholder.innerHTML = '';
-            placeholder.innerHTML = marked(text);
-        } else if (format === 0) {
-            placeholder.innerHTML = '';
-            codeplaceholder.innerHTML = marked(text).replace(/</g,'&lt;').replace(/>/g,'&gt;');
-        }
-        //navigator.qt.postMessage('Html published');
-    }
-
-</script>
 <body>
   <div id="placeholder">geh her do</div>
   <code id="codeplaceholder" style="white-space: pre-wrap;">sowos</code>
-  <div id="jserror"></div>
 </body>
 </html>
 

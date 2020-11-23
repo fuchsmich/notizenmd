@@ -1,5 +1,3 @@
-var doc
-
 addEventListener("DOMContentLoaded", function () {
     // If the document doesn't have a viewport meta tag assume it is going to scale poorly and
     // add one so it doesn't.
@@ -16,14 +14,17 @@ addEventListener("DOMContentLoaded", function () {
 //    }
 
     content.document.body.addEventListener('click', function (event) {
-        if (event.target.nodeName === 'A') {
-            event.preventDefault()
-            sendAsyncMessage("NotizenMD:OpenLink", {
-                "uri":  event.target.href
-            });
-        }
+        dump(JSON.stringify(event))
+//        if (event.target.nodeName === 'A') {
+//            event.preventDefault()
+//            sendAsyncMessage("NotizenMD:OpenLink", {
+//                "uri":  event.target.href
+//            });
+//        }
     })
 })
+
+addMessageListener("NotizenMD:OpenLink", function(){});
 
 addMessageListener("NotizenMd:UpdateText", function(message){
     var placeholder = content.document.getElementById('placeholder');
