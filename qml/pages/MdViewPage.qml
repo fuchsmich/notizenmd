@@ -1,7 +1,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-//import QtWebKit.experimental 1.0
 import "../components"
+import Sailfish.TextLinking 1.0
 
 Page {
     id: page
@@ -17,7 +17,8 @@ Page {
         var schemaRE = /^\w+:/;
         if (schemaRE.test(link)) {
             console.log("external", link);
-            Qt.openUrlExternally(link)
+            linkHandler.handleLink(link)
+            //Qt.openUrlExternally(link)
         } else {
             console.log("internal", link);
             var cf = currentFile.path
@@ -25,6 +26,10 @@ Page {
             console.log(folderName + link);
             currentFile.path = folderName + link;
         }
+    }
+
+    LinkHandler {
+        id: linkHandler
     }
 
     Loader {
@@ -35,7 +40,7 @@ Page {
             item.description = page.description;
             if (!viewCheatSheet) {
                 item.pullDownMenu = pullDownComp.createObject(item);
-                item.markdown = Qt.binding(function(){ return currentFile.content });
+                item.markDown = Qt.binding(function(){ return currentFile.content });
                 item.linkActivated.connect(handleLink)
             } else {
                 loadCheatsheet();
@@ -93,7 +98,7 @@ Page {
             when: viewMode === 1
             PropertyChanges {
                 target: viewLoader
-                source: Qt.resolvedUrl("../components/MdWebView.qml")
+                source: Qt.resolvedUrl("../components/MdGeckoView.qml")
             }
         }
     ]

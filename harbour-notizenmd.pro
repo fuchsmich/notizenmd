@@ -1,22 +1,19 @@
-# NOTICE:
-#
-# Application name defined in TARGET has a corresponding QML filename.
-# If name defined in TARGET is changed, the following needs to be done
-# to match new name:
-#   - corresponding QML filename must be changed
-#   - desktop icon filename must be changed
-#   - desktop filename must be changed
-#   - icon definition filename in desktop file must be changed
-#   - translation filenames have to be changed
-
-# The name of your application
 TARGET = harbour-notizenmd
 
-CONFIG += sailfishapp_qml
+
+#Sailfish.WebView:
+CONFIG += link_pkgconfig
+PKGCONFIG += qt5embedwidget
+
+CONFIG += sailfishapp
+
+SOURCES += \
+    src/harbour-notizenmd.cpp
 
 DISTFILES += qml/harbour-notizenmd.qml \
     qml/cover/CoverPage.qml \
     qml/html/* \
+    qml/html/utils.js \
     qml/python/* \
     rpm/harbour-notizenmd.changes.in \
     rpm/harbour-notizenmd.changes.run.in \
@@ -33,6 +30,7 @@ DISTFILES += qml/harbour-notizenmd.qml \
     qml/pages/MdViewPage.qml \
     qml/components/MdTextArea.qml \
     qml/components/MdWebView.qml \
+    qml/components/MdGeckoView.qml \
     qml/pages/About.qml
 
 
@@ -45,3 +43,4 @@ CONFIG += sailfishapp_i18n
 TRANSLATIONS += \
     translations/harbour-notizenmd-de.ts \
     translations/harbour-notizenmd-fr.ts
+

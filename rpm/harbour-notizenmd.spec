@@ -8,16 +8,11 @@ Name:       harbour-notizenmd
 # >> macros
 # << macros
 
-%{!?qtc_qmake:%define qtc_qmake %qmake}
-%{!?qtc_qmake5:%define qtc_qmake5 %qmake5}
-%{!?qtc_make:%define qtc_make make}
-%{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Notes in markdown
 Version:    0.6.1
 Release:    1
 Group:      Applications/Productivity
 License:    BSD-2
-BuildArch:  noarch
 URL:        https://github.com/fuchsmich/notizenmd
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  harbour-notizenmd.yaml
@@ -26,11 +21,11 @@ Requires:   libsailfishapp-launcher
 Requires:   pyotherside-qml-plugin-python3-qt5
 Requires:   nemo-qml-plugin-contentaction
 Requires:   sailfish-components-webview-qt5
-BuildRequires:  pkgconfig(sailfishapp) >= 1.0.3
+BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
-BuildRequires:  qt5-qttools-linguist
+BuildRequires:  qtmozembed-qt5-devel
 BuildRequires:  desktop-file-utils
 
 %description
@@ -47,9 +42,9 @@ Show and edit markdown formatted notes
 # >> build pre
 # << build pre
 
-%qtc_qmake5 
+%qmake5 
 
-%qtc_make %{?_smp_mflags}
+make %{?_smp_mflags}
 
 # >> build post
 # << build post
@@ -69,7 +64,7 @@ desktop-file-install --delete-original       \
 
 %files
 %defattr(-,root,root,-)
-%defattr(0644,root,root,-)
+%{_bindir}
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
