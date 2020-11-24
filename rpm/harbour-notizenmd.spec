@@ -21,11 +21,13 @@ Requires:   libsailfishapp-launcher
 Requires:   pyotherside-qml-plugin-python3-qt5
 Requires:   nemo-qml-plugin-contentaction
 Requires:   sailfish-components-webview-qt5
+Requires:   sailfish-components-webview-qt5-popups
+Requires:   sailfish-components-webview-qt5-pickers
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
-BuildRequires:  qtmozembed-qt5-devel
+BuildRequires:  pkgconfig(qt5embedwidget) >= 1.14.9
 BuildRequires:  desktop-file-utils
 
 %description

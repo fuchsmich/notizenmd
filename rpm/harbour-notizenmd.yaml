@@ -23,12 +23,14 @@ PkgConfigBR:
   - Qt5Core
   - Qt5Qml
   - Qt5Quick
+  - qt5embedwidget >= 1.14.9
+
 
 
 # Build dependencies without a pkgconfig setup can be listed here
 PkgBR:
   #- qt5-qttools-linguist
-  - qtmozembed-qt5-devel
+  #- qtmozembed-qt5-devel
 
 # Runtime dependencies which are not automatically detected
 Requires:
@@ -37,6 +39,9 @@ Requires:
   - pyotherside-qml-plugin-python3-qt5
   - nemo-qml-plugin-contentaction
   - sailfish-components-webview-qt5
+  - sailfish-components-webview-qt5-popups
+  - sailfish-components-webview-qt5-pickers
+
 
 # All installed files
 Files:
