@@ -3,13 +3,13 @@
 
 import os
 import pyotherside
-#import locale
+import locale
 
 
 def read(path):
-    #pyotherside.send('log', locale.getpreferredencoding(False))
+    pyotherside.send('log', locale.getpreferredencoding(False))
     try:
-        with open(path, 'r', 'utf-8') as f:
+        with open(path, 'r', encoding='utf-8') as f:
             read_data = f.read()
             pyotherside.send('log', "read file {0}".format(path))
             return read_data
@@ -25,7 +25,7 @@ def read(path):
 
 def write(path, content):
     try:
-        with open(path, 'w', 'utf-8') as f:
+        with open(path, 'w', encoding='utf-8') as f:
             f.write(content)
             pyotherside.send('log', "content saved")
     except IOError:
