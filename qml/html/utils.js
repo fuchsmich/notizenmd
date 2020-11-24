@@ -14,17 +14,15 @@ addEventListener("DOMContentLoaded", function () {
 //    }
 
     content.document.body.addEventListener('click', function (event) {
-        dump(JSON.stringify(event))
-//        if (event.target.nodeName === 'A') {
-//            event.preventDefault()
-//            sendAsyncMessage("NotizenMD:OpenLink", {
-//                "uri":  event.target.href
-//            });
-//        }
+        //dump(JSON.stringify(event))
+        if (event.target.nodeName === 'A') {
+            event.preventDefault()
+            sendAsyncMessage("NotizenMD:OpenLink", {
+                "uri":  event.target.href
+            });
+        }
     })
 })
-
-addMessageListener("NotizenMD:OpenLink", function(){});
 
 addMessageListener("NotizenMd:UpdateText", function(message){
     var placeholder = content.document.getElementById('placeholder');

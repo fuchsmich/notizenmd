@@ -48,13 +48,23 @@ WebViewFlickable {
         onViewInitialized: {
             webView.loadFrameScript(Qt.resolvedUrl("../html/marked/marked.min.js"))
             webView.loadFrameScript(Qt.resolvedUrl("../html/utils.js"))
-            console.log("webView initialized")
+            webView.addMessageListeners(["NotizenMD:OpenLink"])
+            //console.log("webView initialized")
         }
-
-        onRecvAsyncMessage: console.log(message, JSON.stringify(data))
 
         onFirstPaint: {
             contentReady = true
+        }
+
+        onRecvAsyncMessage: {
+            switch (message) {
+            case "NotizenMD:OpenLink":
+                console.log("open link", data.uri)
+                linkActivated(data.uri)
+                break
+            default:
+                break
+            }
         }
     }
 }
