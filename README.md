@@ -10,39 +10,42 @@ Simple markdown notes for SailfishOS
 - [ ] Syntax highlighting in editor
 - [ ] Sync filename with title of note (if present)?
 
+v0.6.2
+- fix unnecessary contentaction
+
 v0.6
-- [x] Basic linkhandling (external/internal)
-- [x] About.qml (references to other projects)
-- [x] fix toggle html
+- Basic linkhandling (external/internal)
+- About.qml (references to other projects)
+- fix toggle html
 
 v0.5
-- [x] Cheatsheet no edit etc
-- [x] Move WebView/TextArea into components, switch with states
+- Cheatsheet no edit etc
+- Move WebView/TextArea into components, switch with states
 
 
 v0.4
-- [x] Attach cheatsheet to EditPage
+- Attach cheatsheet to EditPage
 
 v0.3
-- [x] Start translation
-- [x] Append extension on adding note
-- [x] Option editing on adding note (remember choice)
-- [x] View html (for debugging)
-- [x] Switch view on the fly
+- Start translation
+- Append extension on adding note
+- Option editing on adding note (remember choice)
+- View html (for debugging)
+- Switch view on the fly
 
 v0.2
-- [x] Lizenz
-- [x] Edit notes
-- [x] Fileicon to noteicon
-- [x] Set folder when changing path manually
-- [x] Create new note
-- [x] Choose Webview or TextArea
+- Lizenz
+- Edit notes
+- Fileicon to noteicon
+- Set folder when changing path manually
+- Create new note
+- Choose Webview or TextArea
 
 v0.1
 
-- [x] Namefilter not working?
-- [x] Settings filefilter
-- [x] Disable unused actions (edit, new note)
-- [x] Select folder in Pulldown
-- [x] Sorting
+- Namefilter not working?
+- Settings filefilter
+- Disable unused actions (edit, new note)
+- Select folder in Pulldown
+- Sorting
 
