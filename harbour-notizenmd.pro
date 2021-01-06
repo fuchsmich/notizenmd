@@ -44,4 +44,5 @@ CONFIG += sailfishapp_i18n
 
 TRANSLATIONS += \
     translations/harbour-notizenmd-de.ts \
-    translations/harbour-notizenmd-fr.ts
+    translations/harbour-notizenmd-fr.ts \
+    translations/harbour-notizenmd-sv.ts
