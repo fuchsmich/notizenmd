@@ -27,6 +27,7 @@ _escape_pattern = re.compile(r'&(?!#?\w+;)')
 _newline_pattern = re.compile(r'\r\n|\r')
 _block_quote_leading_pattern = re.compile(r'^ *> ?', flags=re.M)
 _block_code_leading_pattern = re.compile(r'^ {4}', re.M)
+_tag_comment_pattern = re.compile(r'^---\n[\d\D\n]*\n---\n')
 _inline_tags = [
     'a', 'em', 'strong', 'small', 's', 'cite', 'q', 'dfn', 'abbr', 'data',
     'time', 'code', 'var', 'samp', 'kbd', 'sub', 'sup', 'i', 'b', 'u', 'mark',
@@ -87,6 +88,7 @@ def preprocessing(text, tab=4):
     text = _newline_pattern.sub('\n', text)
     text = text.expandtabs(tab)
     text = text.replace('\u2424', '\n')
+    text = _tag_comment_pattern.sub('', text)
     pattern = re.compile(r'^ +$', re.M)
     return pattern.sub('', text)
 
