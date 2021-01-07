@@ -10,6 +10,9 @@ Simple markdown notes for SailfishOS
 - [ ] Syntax highlighting in editor
 - [ ] Sync filename with title of note (if present)?
 
+v0.6.3
+- swedish translation
+
 v0.6.2
 - fix unnecessary contentaction
 
