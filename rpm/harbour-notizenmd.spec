@@ -13,7 +13,7 @@ Name:       harbour-notizenmd
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Notes in markdown
-Version:    0.6.3
+Version:    0.6.4
 Release:    1
 Group:      Applications/Productivity
 License:    BSD-2

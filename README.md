@@ -10,6 +10,9 @@ Simple markdown notes for SailfishOS
 - [ ] Syntax highlighting in editor
 - [ ] Sync filename with title of note (if present)?
 
+v0.6.4
+- remove contentaction from DirectoryPickerPage.qml
+
 v0.6.3
 - swedish translation
 
