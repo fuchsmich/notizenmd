@@ -10,6 +10,11 @@ Simple markdown notes for SailfishOS
 - [ ] Syntax highlighting in editor
 - [ ] Sync filename with title of note (if present)?
 
+## changelog
+
+v0.6.5
+- remove onError from FileModel
+
 v0.6.4
 - remove contentaction from DirectoryPickerPage.qml
 

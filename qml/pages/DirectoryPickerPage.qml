@@ -51,13 +51,13 @@ Page {
 
         path: homePath
         active: page.status === PageStatus.Active
-        onError: {
-            if (error == FileModel.ErrorReadNoPermissions) {
-                //% "No permissions to access %1"
-                errorNotification.show(qsTrId("filemanager-la-folder_no_permission_to_access").arg(fileName))
+//        onError: {
+//            if (error == FileModel.ErrorReadNoPermissions) {
+//                //% "No permissions to access %1"
+//                errorNotification.show(qsTrId("filemanager-la-folder_no_permission_to_access").arg(fileName))
 
-            }
-        }
+//            }
+//        }
     }
     SilicaListView {
         id: fileList
